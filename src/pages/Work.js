@@ -1,16 +1,23 @@
 import React from 'react';
+import NavBar from '../components/NavBar';
+import './Work.css';
 
 function Work() {
   return (
-    <div>
-      <h1>My Work</h1>
-      <p>This is where you can showcase your projects, work experience, or portfolio items.</p>
-      {/* You can list your projects here */}
-      <ul>
-        <li>Project 1: Description</li>
-        <li>Project 2: Description</li>
-        <li>Project 3: Description</li>
-      </ul>
+    <div className="page work-page">
+      <NavBar />
+      <h1 className="work-title">WORK</h1>
+      <div className="experiences">
+        {['Experience 1', 'Experience 2', 'Experience 3'].map((exp, index) => (
+          <div key={index} className="experience">
+            <h3>✦ {exp}</h3>
+            <div className="project-box">
+              <p><strong>Project Name:</strong></p>
+              <p><strong>Description:</strong></p>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

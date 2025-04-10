@@ -1,0 +1,79 @@
+/* Import Kadwa font in your HTML head */
+@import url('https://fonts.googleapis.com/css2?family=Kadwa:wght@400;700&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* Ensure body takes full height */
+body {
+    min-height: 100vh;
+    background-color: #a6c8ff; /* Add background color to body as well */
+}
+
+.about-page {
+    background-color: #a6c8ff;
+    padding: 40px;
+    min-height: 100vh;
+    font-family: 'Kadwa', serif;
+    box-sizing: border-box; /* This ensures padding is included in the height */
+}
+
+
+.about-section {
+    text-align: center;
+}
+
+.small-title {
+    font-size: 1.2rem;
+    color: white;
+    font-family: 'Kadwa', serif; /* Apply Kadwa font to small title */
+}
+
+.about-title {
+    font-size: 2.5rem;
+    color: #003399;
+    margin-bottom: 30px;
+    font-family: 'Kadwa', serif; /* Apply Kadwa font to about title */
+}
+
+.about-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.profile-img {
+    width: 150px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.bio {
+    max-width: 500px;
+    text-align: left;
+}
+
+.bio h4 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #002b80;
+    font-family: 'Kadwa', serif; /* Apply Kadwa font to bio heading */
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    color: #222;
+    margin-bottom: 15px;
+}
+
+.description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #333;
+}

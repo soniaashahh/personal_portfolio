@@ -1,0 +1,56 @@
+.home-page {
+    background-color: #a6c8ff;
+    height: 100vh;
+    padding: 20px;
+    position: relative;
+}
+  
+.hero {
+    text-align: center;
+    margin-top: 50px;
+}
+  
+.title {
+    font-size: 5rem;
+    color: #003399;
+}
+  
+.welcome {
+    font-size: 4rem;
+}
+  
+.rocket, .planet {
+    position: absolute;
+}
+  
+.rocket {
+    position: absolute;
+    left: 16%; /* Move it more to the left */
+    top: 64%;  /* Keep the vertical position */
+    transform: translate(-50%, -50%) rotate(3deg) scale(0.6); /* Rotate more to the right */
+    width: 60px; /* Width */
+    height: 107px; /* Height */
+}
+
+
+
+  
+.planet-top-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px; /* Reduced width */
+    height: 30px; /* Adjusted height to match the width */
+    transform: scale(0.5); /* Scale down the planet */
+}
+
+  
+.planet-bottom-right {
+    position: absolute !important;
+    bottom: -50px !important;
+    left: 0 !important;
+    right: auto !important; /* Explicitly remove right positioning */
+    width: 6px !important;
+    height: 6px !important;
+    transform: scale(0.5) !important;
+}

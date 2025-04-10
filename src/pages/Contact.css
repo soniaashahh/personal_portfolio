@@ -1,0 +1,183 @@
+.contact-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #a5c0f3;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .contact-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  
+  .contact-heading {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    color: white;
+    text-align: center;
+  }
+  
+  .contact-title {
+    font-size: 3.5rem;
+    color: #2b4bb0;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+  
+  .social-links {
+    margin-top: 2rem;
+  }
+  
+  .social-star {
+    position: relative;
+    width: 300px;
+    height: 300px;
+  }
+  
+  /* Horizontal line for the star */
+  .social-star::before {
+    content: '';
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.6);
+    height: 2px;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    z-index: 0;
+  }
+  
+  /* Vertical line for the star */
+  .social-star::after {
+    content: '';
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.6);
+    height: 100%;
+    width: 2px;
+    top: 0;
+    left: 50%;
+    z-index: 0;
+  }
+  
+  /* Diagonal lines for the star */
+  .diagonal-1, .diagonal-2 {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.6);
+    height: 2px;
+    width: 140%;
+    top: 50%;
+    left: -20%;
+    transform-origin: center;
+    z-index: 0;
+  }
+  
+  .diagonal-1 {
+    transform: rotate(45deg);
+  }
+  
+  .diagonal-2 {
+    transform: rotate(-45deg);
+  }
+  
+  .social-link {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: white;
+    transition: transform 0.3s;
+    z-index: 1;
+  }
+  
+  .social-link img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .social-link:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Positioning for each social icon */
+  .instagram {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .github {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+  
+  .gmail {
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+  }
+  
+  .linkedin {
+    bottom: 25%;
+    left: 25%;
+  }
+  
+  .facebook {
+    bottom: 25%;
+    right: 25%;
+  }
+  
+  /* Decorative elements */
+  .phone-icon {
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    width: 80px;
+    height: 80px;
+  }
+  
+  .planet {
+    position: absolute;
+  }
+  
+  .planet-top-right {
+    top: 10%;
+    right: 8%;
+    width: 80px;
+    height: 80px;
+  }
+  
+  .planet-bottom-left {
+    bottom: 10%;
+    left: 10%;
+    width: 120px;
+    height: 120px;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .social-star {
+      width: 250px;
+      height: 250px;
+    }
+    
+    .social-link {
+      width: 40px;
+      height: 40px;
+    }
+    
+    .social-link img {
+      width: 24px;
+      height: 24px;
+    }
+  }
