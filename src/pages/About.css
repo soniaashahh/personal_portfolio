@@ -1,79 +1,221 @@
-/* Import Kadwa font in your HTML head */
-@import url('https://fonts.googleapis.com/css2?family=Kadwa:wght@400;700&display=swap');
-
+/* Global Reset */ 
 html, body {
     margin: 0;
     padding: 0;
     height: 100%;
+    overflow: hidden;
 }
-
-/* Ensure body takes full height */
-body {
-    min-height: 100vh;
-    background-color: #a6c8ff; /* Add background color to body as well */
-}
-
+  
+/* About Page Styling */
 .about-page {
     background-color: #a6c8ff;
-    padding: 40px;
-    min-height: 100vh;
+    height: 100vh;
     font-family: 'Kadwa', serif;
-    box-sizing: border-box; /* This ensures padding is included in the height */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
-
-
+  
+/* About Section */
 .about-section {
-    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 30px;
 }
-
+  
+/* Titles */
 .small-title {
-    font-size: 1.2rem;
-    color: white;
-    font-family: 'Kadwa', serif; /* Apply Kadwa font to small title */
+    font-size: 36px;
+    color: #ffffffaa;
+    margin: 0;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    top: 39px; /* Moves "Who Am I" down */
 }
-
+  
 .about-title {
-    font-size: 2.5rem;
+    font-size: 70px;
     color: #003399;
-    margin-bottom: 30px;
-    font-family: 'Kadwa', serif; /* Apply Kadwa font to about title */
+    font-family: 'Lalezar', cursive;
+    margin: 0 0 30px 0;
+    letter-spacing: 2px;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    top: 32px; /* Moves "About" down */
 }
-
+  
+/* Content Layout */
 .about-content {
     display: flex;
-    align-items: flex-start;
     justify-content: center;
-    gap: 40px;
-    margin-top: 20px;
+    align-items: center; 
+    gap: 198px; /* Restored larger gap here */
     flex-wrap: wrap;
+    overflow: hidden;
+    width: 85%; /* Slightly reduced to ensure spacing */
+    max-width: 1000px;
 }
-
+  
+/* Image Container */
+.image-container {
+    flex-shrink: 0;
+    max-width: 270px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+/* Profile Image */
 .profile-img {
-    width: 150px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    width: 240px;
+    height: auto;
+    border-radius: 12px;
 }
-
-.bio {
-    max-width: 500px;
-    text-align: left;
+  
+/* Bio Name */
+.bio-name {
+    font-size: 30px;
+    color: #003399;
+    font-weight: bold;
+    margin: 10px 0 5px 0;
+    text-align: center;
 }
-
-.bio h4 {
-    margin: 0;
-    font-size: 1.5rem;
-    color: #002b80;
-    font-family: 'Kadwa', serif; /* Apply Kadwa font to bio heading */
-}
-
-.subtitle {
-    font-size: 0.9rem;
-    color: #222;
-    margin-bottom: 15px;
-}
-
-.description {
-    font-size: 0.9rem;
+  
+/* Bio Subtitle */
+.bio-subtitle {
+    font-size: 16px;
+    color: white;
     line-height: 1.5;
-    color: #333;
+    margin-bottom: 12px;
+    font-weight: bold;
+    text-align: center;
+    max-width: 240px;
+    position: relative;
+    top: -10px; /* Moves subtitle up */
+}
+  
+/* Bio Description */
+.bio {
+    max-width: 460px; /* Slightly reduced */
+    text-align: left;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+  
+.bio-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: white;
+    font-weight: bold;
+}
+  
+/* Floating Planets */
+.about-planet {
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+}
+  
+.about-planet-top-right {
+    top: 10%;
+    right: 40px;
+    width: 90px;
+    height: 90px;
+    transform: scale(2.1);
+}
+  
+.about-planet-bottom-right {
+    bottom: 4%;
+    right: 1%;
+    width: 90px;
+    height: 90px;
+    transform: scale(2.1) rotateY(180deg);
+}
+  
+.about-planet img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+  
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .about-title {
+        font-size: 45px;
+        margin-bottom: 20px;
+        top: 0; /* Reset position for mobile */
+    }
+    
+    .small-title {
+        font-size: 26px;
+        top: 0; /* Reset position for mobile */
+    }
+    
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        width: 95%;
+    }
+    
+    .image-container {
+        text-align: center;
+    }
+    
+    .bio {
+        text-align: center;
+        margin-top: 0;
+    }
+    
+    .profile-img {
+        width: 180px;
+    }
+    
+    .bio-name {
+        font-size: 22px;
+    }
+    
+    .bio-subtitle {
+        font-size: 14px;
+        top: 0; /* Reset position for mobile */
+    }
+    
+    .bio-description {
+        font-size: 15px;
+        text-align: center;
+    }
+    
+    .about-planet-top-right,
+    .about-planet-bottom-right {
+        display: none;
+    }
+    .about-planet-top-left {
+  top: 5%;
+  left: 30px;
+  width: 80px;
+  height: 80px;
+  transform: scale(1.8);
+  opacity: 0.85;
+}
+
+.about-planet-bottom-left {
+  bottom: 5%;
+  left: 20px;
+  width: 100px;
+  height: 100px;
+  transform: scale(2) rotate(-20deg);
+  opacity: 0.8;
+}
+
 }

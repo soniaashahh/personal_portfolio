@@ -35,8 +35,16 @@ body, html {
 }
 
 /* Group links for "About," "Work," and "Contact" to align them to the right with little space */
+
+/* Keep all your original CSS and just add these new classes */
+
+/* Left side navigation link */
+.nav-links-left {
+  /* No special styling needed, just a container for organization */
+}
+
+/* Right side navigation links */
 .nav-links-right {
   display: flex;
-  gap: 10px;  /* Little space between the links */
-  justify-content: flex-start;  /* Align them together */
+  gap: 40px; /* Adjust this value to control spacing between right-side links */
 }

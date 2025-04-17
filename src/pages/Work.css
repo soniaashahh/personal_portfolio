@@ -1,32 +1,123 @@
-.work-page {
-    background-color: #a6c8ff;
-    padding: 40px;
-    min-height: 100vh;
-  }
-  
-  .work-title {
-    text-align: center;
-    font-size: 2.5rem;
-    color: #003399;
-    margin-bottom: 30px;
-  }
-  
-  .experiences {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-  }
-  
+.page.work-page {
+  background-color: #a8c7ff;
+  min-height: 100vh;
+  padding: 40px 60px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.work-title {
+  text-align: left;
+  font-size: 4.5rem;
+  font-weight: 900;
+  color: #003399;
+  margin-bottom: 30px;
+  margin-left: 50px;
+  -webkit-text-stroke: 1px white;
+  text-shadow: 3px 3px 0px rgba(255, 255, 255, 0.8),
+               6px 6px 10px rgba(0, 51, 153, 0.4);
+  font-family: 'Arial Black', Helvetica, sans-serif;
+  position: relative;
+  display: inline-block;
+}
+
+.work-title::after {
+  content: 'WORK';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.6);
+  z-index: -1;
+  transform: translateZ(-10px) translateX(8px) translateY(8px);
+}
+
+.experiences {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  margin-top: -17px;
+}
+
+.experience {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 950px;
+  justify-content: flex-start; /* Changed to flex-start to bring elements closer */
+  gap: 75px; /* Very small gap between experience title and box */
+}
+
+.experience-title {
+  font-size: 2.4rem;
+  color: white;
+  font-weight: 800;
+  font-family: 'Labrada', serif;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  width: 220px;
+  text-align: right;
+  margin-right: 0;
+  padding-right: 5px; /* Add a small padding to avoid text touching the box */
+}
+
+.project-box {
+  background-color: #dbe7ff;
+  padding: 25px 30px;
+  border-radius: 20px;
+  width: 550px; /* Increased width */
+  height: 160px; /* Increased height */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-left: 5px; /* Add a small margin to separate from title */
+}
+
+.project-box p {
+  margin: 6px 0;
+  color: #003399;
+  font-weight: bold;
+}
+
+/* Decorative Planets */
+.work-planet {
+  position: absolute;
+  width: 150px;
+}
+
+.work-planet img {
+  width: 100%;
+  height: auto;
+}
+
+.work-planet-top-left {
+  top: 35%;
+  left: 3%;
+  transform: scale(1.3);
+}
+
+.work-planet-bottom-right {
+  bottom: 5%;
+  right: 3%;
+  transform: scale(1.3);
+}
+
+@media (max-width: 768px) {
   .experience {
-    text-align: center;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .experience-title {
+    margin-left: 10px;
   }
   
   .project-box {
-    background-color: #e0ecff;
-    padding: 20px;
-    border-radius: 12px;
-    width: 300px;
-    text-align: left;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  }  
+    width: 100%;
+  }
+}

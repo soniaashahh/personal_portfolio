@@ -13,10 +13,10 @@ function Home() {
       <div className="rocket">
         <img src="/images/rocket.png" alt="Rocket" />
       </div>
-      <div className="planet planet-top-right">
+      <div className="home-planet home-planet-top-right">
         <img src="/images/planet1.png" alt="Planet" />
       </div>
-      <div className="planet planet-bottom-right">
+      <div className="home-planet home-planet-bottom-right">
         <img src="/images/planet2.png" alt="Planet" />
       </div>
     </div>
