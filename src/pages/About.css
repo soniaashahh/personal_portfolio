@@ -252,7 +252,7 @@ html, body {
     
     .about-section {
       justify-content: flex-start; /* Start from top on mobile */
-      padding: 50px 20px; /* Add good padding on mobile */
+      padding: 80px 20px 50px; /* Add more top padding on mobile */
     }
   
     .about-title {
@@ -264,11 +264,13 @@ html, body {
     .small-title {
       font-size: clamp(1.2rem, 4vw, 1.5rem);
       top: 0;
+      margin-bottom: 5px; /* Add space between title and subtitle */
     }
   
     .about-content {
       width: 100%;
       margin-bottom: 40px; /* Add space at bottom on mobile */
+      margin-top: 10px; /* Add space at top of content on mobile */
     }
   
     .profile-img {
@@ -289,21 +291,58 @@ html, body {
       text-align: center;
     }
   
-    /* Hide decorative elements on mobile to save space */
+    /* Make planets smaller but still visible on mobile */
     .planet-orbit,
     .about-planet {
-      display: none;
+      display: block; /* Keep visible */
+      transform: scale(0.5); /* Make smaller */
+    }
+    
+    .planet-orbit {
+      width: 100px;
+      height: 100px;
+    }
+    
+    .orbit-center {
+      width: 70px;
+      height: 70px;
+    }
+    
+    .orbiting-planet img {
+      width: 50px;
+      height: 50px;
+    }
+    
+    /* Adjust planet positions for mobile */
+    .planet-orbit {
+      top: 15%;
+      left: 2%;
+    }
+    
+    .about-orbit-2 {
+      bottom: 5%;
+      right: 2%;
+    }
+    
+    .orbit-center.top-right {
+      top: 5%;
+      right: 15px;
+    }
+    
+    .orbit-center.bottom-right {
+      bottom: 2%;
+      right: 0;
     }
   }
   
   /* Additional fixes for very small screens */
   @media (max-width: 480px) {
     .about-section {
-      padding: 40px 15px;
+      padding: 100px 15px 40px; /* Even more top padding on smallest screens */
     }
     
     .small-title {
-      margin-bottom: 5px;
+      margin-bottom: 8px;
     }
     
     .about-title {
@@ -316,5 +355,26 @@ html, body {
     
     .bio-description {
       padding: 0 10px;
+    }
+    
+    /* Further reduce planet size on smallest screens */
+    .planet-orbit,
+    .about-planet {
+      transform: scale(0.4);
+    }
+    
+    .planet-orbit {
+      width: 80px;
+      height: 80px;
+    }
+    
+    .orbit-center {
+      width: 60px;
+      height: 60px;
+    }
+    
+    .orbiting-planet img {
+      width: 40px;
+      height: 40px;
     }
   }

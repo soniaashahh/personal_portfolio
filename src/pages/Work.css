@@ -45,6 +45,9 @@ body::before {
   position: relative;
   display: inline-block;
   z-index: 2;
+  max-width: 100%; /* Ensure text doesn't overflow container */
+  overflow-wrap: break-word; /* Allow text to break to prevent overflow */
+  word-wrap: break-word; /* For broader browser support */
 }
 
 .work-title::after {
@@ -195,6 +198,11 @@ body::before {
     margin: 3vh 0 3vh 0; /* Adjusted margins */
     text-align: center;
     width: 100%;
+    font-size: 2.2rem; /* Fixed size for mobile to prevent cutoff */
+    white-space: normal; /* Allow text to wrap */
+    hyphens: auto; /* Allow hyphenation for better text wrapping */
+    padding: 0 10px; /* Add some padding on the sides */
+    box-sizing: border-box;
   }
   
   .experiences {
@@ -217,6 +225,7 @@ body::before {
     flex: none;
     padding-right: 0;
     margin-bottom: 0;
+    white-space: normal; /* Allow text to wrap if needed */
   }
   
   .project-box {
@@ -225,26 +234,51 @@ body::before {
     padding: 1.2em; /* Slightly reduced padding */
   }
   
-  /* Adjust planet sizes and positions for mobile */
+  /* Adjust planet sizes and positions for mobile but keep them visible */
   .work-planet {
-    width: 100px; /* Smaller on mobile */
+    width: 80px; /* Smaller on mobile but still visible */
+  }
+  
+  .work-planet-top-left {
+    top: 35%;
+    left: 3%;
+    transform: scale(0.9); /* Scale down but still visible */
+  }
+  
+  .work-planet-bottom-right {
+    bottom: 5%;
+    right: 3%;
+    transform: scale(0.9); /* Scale down but still visible */
   }
   
   .planet-orbit {
-    width: 120px;
-    height: 120px;
-  }
-  
-  .planet-orbit-2 {
     width: 100px;
     height: 100px;
   }
   
-  /* Optional: Hide some decorative elements on very small screens */
-  @media (max-width: 480px) {
-    .work-planet-top-left {
-      opacity: 0.5; /* Make less prominent */
-      transform: scale(0.8);
-    }
+  .planet-orbit-2 {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* Extra small devices adjustment */
+@media (max-width: 480px) {
+  .work-title {
+    font-size: 1.8rem; /* Even smaller on very small screens */
+  }
+  
+  .work-planet {
+    width: 60px; /* Smaller but still visible */
+  }
+  
+  .planet-orbit {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .planet-orbit-2 {
+    width: 60px;
+    height: 60px;
   }
 }
