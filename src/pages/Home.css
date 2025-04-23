@@ -1,10 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Kadwa:wght@400;700&family=Lalezar&display=swap');
+/* Hover Lift Effect */
+.nav-bar a,
+.project-box {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav-bar a:hover,
+.project-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
 
 .home-page {
-  background-color: #7DAFFF;
+  background-color: #a6c8ff;
   height: 100vh;
   padding: 20px;
   position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Make sure text is above everything else */
+.text-layer {
+  position: relative;
+  z-index: 10;
 }
 
 .hero {
@@ -19,49 +39,155 @@
   color: white !important;
   margin: 0;
   line-height: 0.8;
+  position: relative;
+  z-index: 11;
 }
 
 .title {
   font-size: 115px !important;
   font-family: 'Lalezar' !important;
-  color: #1251FF !important;
+  color: #003399 !important;
   margin-top: -5px;
   margin-bottom: 3px !important;
   letter-spacing: 4px !important;
   text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.25) !important;
+  position: relative;
+  z-index: 11;
 }
 
-.rocket,
-.home-planet {
-  position: absolute;
-}
-
+/* ROCKET (behind everything except background) */
 .rocket {
-  left: 1%;
-  top: 65%;
-  transform: translate(-50%, -50%) rotate(3deg) scale(0.6);
+  position: absolute;
+  animation: rocketFly 8s linear infinite;
   width: 80px;
   height: 140px;
+  z-index: 1;
+  left: -10%;
+  top: 65%;
+  transform: translate(-50%, -50%) rotate(3deg) scale(0.5);
 }
 
-.home-planet-top-right {
+/* PLANETS */
+.orbit-center-home {
+  position: absolute;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.orbit-center-home.top-right {
   top: 70%;
   right: 10%;
-  width: 40px;
-  height: 40px;
-  transform: scale(7.2);
 }
 
-.home-planet-bottom-right {
-  bottom: 80%;
+.orbit-center-home.bottom-left {
+  top: 17%;
   left: 5%;
-  width: 25px;
-  height: 25px;
-  transform: scale(10.0);
 }
 
-.home-planet img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+/* Orbiting Planets */
+.orbiting-planet-home {
+  position: absolute;
+  animation: rotatePlanetHome 30s linear infinite;
+}
+
+.orbiting-planet-home.reverse {
+  animation-direction: reverse;
+  animation-duration: 40s;
+}
+
+.orbiting-planet-home img.large-planet {
+  position: absolute;
+  transform-origin: center center;
+}
+
+/* Target the specific planets with appropriate sizes */
+.orbit-center-home.top-right .large-planet {
+  width: 288px; /* 40px * 7.2 */
+  height: 288px;
+  margin-top: -144px;
+  margin-left: -144px;
+}
+
+.orbit-center-home.bottom-left .large-planet {
+  width: 250px; /* 25px * 10.0 */
+  height: 250px;
+  margin-top: -125px;
+  margin-left: -125px;
+}
+
+/* ROCKET ANIMATION */
+@keyframes rocketFly {
+  0% {
+    transform: translate(-50%, -50%) rotate(3deg) scale(0.5);
+    left: -10%;
+    top: 65%;
+  }
+  25% {
+    left: 30%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(15deg) scale(0.5);
+  }
+  50% {
+    left: 60%;
+    top: 30%;
+    transform: translate(-50%, -50%) rotate(-10deg) scale(0.5);
+  }
+  75% {
+    left: 90%;
+    top: 60%;
+    transform: translate(-50%, -50%) rotate(20deg) scale(0.5);
+  }
+  100% {
+    left: 110%;
+    top: 65%;
+    transform: translate(-50%, -50%) rotate(3deg) scale(0.5);
+  }
+}
+
+/* Simpler planet orbiting animation */
+@keyframes rotatePlanetHome {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Click rotation animations */
+.rotate-on-click-top {
+  animation: rotatePlanetTop 1.5s linear;
+}
+
+.rotate-on-click-bottom {
+  animation: rotatePlanetBottom 1.5s linear;
+}
+
+@keyframes rotatePlanetTop {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotatePlanetBottom {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.nav-bar a, .project-box {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav-bar a:hover, .project-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }

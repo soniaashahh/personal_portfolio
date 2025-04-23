@@ -1,183 +1,176 @@
 .contact-page {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: #a5c0f3;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .contact-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-  }
-  
-  .contact-heading {
-    font-size: 2rem;
-    font-weight: 400;
-    margin-bottom: 1rem;
-    color: white;
-    text-align: center;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #a6c8ff;
+  font-family: 'Kadwa', serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 30px;
+  margin-top: 20px; /* Smaller margin to prevent overflow */
+}
+
+.contact-heading {
+  font-size: 45px;
+  color: #ffffffaa;
+  margin: 0;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  top: 39px;
+  margin-top: 15px; /* Smaller margin to prevent overflow */
+}
+
+.contact-title {
+  font-size: 105px;
+  color: #003399;
+  font-family: 'Lalezar', cursive;
+  margin: 0 0 30px 0;
+  letter-spacing: 2px;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  top: 32px;
+  text-shadow: 
+    -1px -1px 0 #ffffff40,
+    1px -1px 0 #ffffff40,
+    -1px 1px 0 #ffffff40,
+    1px 1px 0 #ffffff40;
+}
+
+.social-star {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  margin: 40px auto; /* Reduced from 50px to help with spacing */
+}
+
+.star-svg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.social-link {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  transition: transform 0.3s;
+}
+
+.social-link img {
+  width: 28px;
+  height: 28px;
+}
+
+.social-link:hover {
+  transform: scale(1.1);
+}
+
+/* Corrected positioning on star points (scaled to 400x400 container) */
+.icon1 { top: -13px; left: 175px; }     /* Top point (Instagram) */
+.icon2 { top: 120px; left: 369px; }     /* Top-right (GitHub) */
+.icon3 { top: 343px; left: 297px; }     /* Bottom-right (Gmail) */
+.icon4 { top: 120px; left: -19px; }     /* Top-left (LinkedIn) - mirrored with GitHub */
+.icon5 { top: 343px; left: 53px; }      /* Bottom-left (Facebook) */
+
+/* Decorative Elements - More specific selectors */
+.contact-page .phone-icon {
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  width: 80px;
+  height: 80px;
+}
+
+.contact-page .planet-top-right-contact {
+  position: absolute;
+  top: 10% !important; /* Using !important to override any conflicting styles */
+  right: 8% !important;
+  width: 80px;
+  height: 80px;
+  transform: scale(0.4) !important;
+  z-index: 2;
+}
+
+.contact-page .planet-bottom-left-contact {
+  position: absolute;
+  bottom: 90% !important; /* Using !important to override any conflicting styles */
+  left: -10% !important;
+  width: 120px;
+  height: 120px;
+  transform: scale(0.5) !important;
+}
+
+.contact-page .rocket2 {
+  position: absolute;
+  transform: scale(0.4) rotate(40deg) !important; /* Fixed syntax error here */
+}
+
+@media (max-width: 768px) {
   .contact-title {
-    font-size: 3.5rem;
-    color: #2b4bb0;
-    font-weight: 700;
-    margin-bottom: 3rem;
-    text-align: center;
+    font-size: 45px;
+    margin-bottom: 20px;
+    top: 0;
   }
-  
-  .social-links {
-    margin-top: 2rem;
+
+  .contact-heading {
+    font-size: 26px;
+    top: 0;
   }
-  
+
   .social-star {
-    position: relative;
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
   }
-  
-  /* Horizontal line for the star */
-  .social-star::before {
-    content: '';
-    position: absolute;
-    background-color: rgba(255, 255, 255, 0.6);
-    height: 2px;
-    width: 100%;
-    top: 50%;
-    left: 0;
-    z-index: 0;
-  }
-  
-  /* Vertical line for the star */
-  .social-star::after {
-    content: '';
-    position: absolute;
-    background-color: rgba(255, 255, 255, 0.6);
-    height: 100%;
-    width: 2px;
-    top: 0;
-    left: 50%;
-    z-index: 0;
-  }
-  
-  /* Diagonal lines for the star */
-  .diagonal-1, .diagonal-2 {
-    position: absolute;
-    background-color: rgba(255, 255, 255, 0.6);
-    height: 2px;
-    width: 140%;
-    top: 50%;
-    left: -20%;
-    transform-origin: center;
-    z-index: 0;
-  }
-  
-  .diagonal-1 {
-    transform: rotate(45deg);
-  }
-  
-  .diagonal-2 {
-    transform: rotate(-45deg);
-  }
-  
+
   .social-link {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background-color: white;
-    transition: transform 0.3s;
-    z-index: 1;
+    width: 40px;
+    height: 40px;
   }
-  
+
   .social-link img {
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
   }
-  
-  .social-link:hover {
-    transform: scale(1.1);
+
+  .planet-top-right-contact,
+  .planet-bottom-left-contact {
+    display: none;
   }
-  
-  /* Positioning for each social icon */
-  .instagram {
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  
-  .github {
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-  }
-  
-  .gmail {
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-  }
-  
-  .linkedin {
-    bottom: 25%;
-    left: 25%;
-  }
-  
-  .facebook {
-    bottom: 25%;
-    right: 25%;
-  }
-  
-  /* Decorative elements */
-  .phone-icon {
-    position: absolute;
-    bottom: 10%;
-    left: 10%;
-    width: 80px;
-    height: 80px;
-  }
-  
-  .planet {
-    position: absolute;
-  }
-  
-  .planet-top-right {
-    top: 10%;
-    right: 8%;
-    width: 80px;
-    height: 80px;
-  }
-  
-  .planet-bottom-left {
-    bottom: 10%;
-    left: 10%;
-    width: 120px;
-    height: 120px;
-  }
-  
-  /* Responsive styles */
-  @media (max-width: 768px) {
-    .social-star {
-      width: 250px;
-      height: 250px;
-    }
-    
-    .social-link {
-      width: 40px;
-      height: 40px;
-    }
-    
-    .social-link img {
-      width: 24px;
-      height: 24px;
-    }
-  }
+}
+/* Add this at the bottom of your CSS */
+
+.rocket2 {
+  z-index: 0;
+}
+
+.social-star {
+  z-index: 2;
+  position: relative;
+}
+
+.social-link {
+  z-index: 3; /* ensure links still appear above everything */
+}
+
+.star-svg {
+  z-index: 2;
+}

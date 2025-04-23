@@ -29,10 +29,12 @@ body, html {
 /* Navbar link styling */
 .nav-bar a {
   text-decoration: none;
-  color: #1251FF;  /* Text color */
-  font-family: 'Kadwa', serif;  /* Apply Kadwa font */
+  color: #1251FF;  
+  font-family: 'Kadwa', serif;  
   font-weight: bold;
+  text-transform: uppercase; 
 }
+
 
 /* Group links for "About," "Work," and "Contact" to align them to the right with little space */
 

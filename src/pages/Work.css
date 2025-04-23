@@ -1,3 +1,29 @@
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background:
+    radial-gradient(3px 3px at 20% 30%, rgba(255,255,255,0.9), transparent),
+    radial-gradient(1.5px 1.5px at 70% 10%, rgba(255,255,255,0.7), transparent),
+    radial-gradient(3px 3px at 40% 80%, rgba(255,255,255,0.8), transparent);
+  background-size: 200px 200px;
+  animation: starTwinkle 10s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes starTwinkle {
+  0%, 100% {
+    opacity:2;
+    background-position: 0 0;
+  }
+  50% {
+    opacity: 4;
+    background-position: 100px 100px;
+  }
+}
+
+
 .page.work-page {
   background-color: #a8c7ff;
   min-height: 100vh;
@@ -6,6 +32,9 @@
   position: relative;
 }
 
+/* Work title styling */
+/* Work title styling - enhanced version */
+/* Work title styling - simplified without 3D */
 .work-title {
   text-align: left;
   font-size: 4.5rem;
@@ -19,25 +48,23 @@
   font-family: 'Arial Black', Helvetica, sans-serif;
   position: relative;
   display: inline-block;
+  z-index: 2; /* Keep this to ensure title stays above planets */
 }
 
+/* Remove the pseudo-element causing 3D issues */
 .work-title::after {
-  content: 'WORK';
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: transparent;
-  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.6);
-  z-index: -1;
-  transform: translateZ(-10px) translateX(8px) translateY(8px);
+  display: none; /* This will hide the after element completely */
 }
 
+/* Experience section styling */
 .experiences {
   display: flex;
   flex-direction: column;
   gap: 40px;
   align-items: center;
-  margin-top: -17px;
+  margin-top: -40px;
+  position: relative;
+  z-index: 2; /* Ensure experiences stay above planets */
 }
 
 .experience {
@@ -45,8 +72,8 @@
   align-items: center;
   width: 100%;
   max-width: 950px;
-  justify-content: flex-start; /* Changed to flex-start to bring elements closer */
-  gap: 75px; /* Very small gap between experience title and box */
+  justify-content: flex-start;
+  gap: 75px;
 }
 
 .experience-title {
@@ -59,34 +86,40 @@
   align-items: center;
   width: 220px;
   text-align: right;
-  margin-right: 0;
-  padding-right: 5px; /* Add a small padding to avoid text touching the box */
+  padding-right: 5px;
 }
 
 .project-box {
   background-color: #dbe7ff;
   padding: 25px 30px;
   border-radius: 20px;
-  width: 550px; /* Increased width */
-  height: 160px; /* Increased height */
+  width: 550px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin-left: 5px; /* Add a small margin to separate from title */
+  margin-left: 5px;
 }
 
+/* Base text color inside project-box */
 .project-box p {
   margin: 6px 0;
+  color:#003399;
+  font-weight: normal;
+}
+
+/* Only the inline labels get the bright blue */
+.project-box .project-label {
   color: #003399;
-  font-weight: bold;
+  margin-right: 4px;
 }
 
 /* Decorative Planets */
 .work-planet {
   position: absolute;
   width: 150px;
+  z-index: 0; /* Keep planets behind text */
 }
 
 .work-planet img {
@@ -106,6 +139,44 @@
   transform: scale(1.3);
 }
 
+/* Planet orbits */
+.planet-orbit {
+  position: absolute;
+  top: 30%; left: 10%;
+  width: 200px; height: 200px;
+  animation: rotateOrbit 30s linear infinite;
+  transform-origin: center center;
+  z-index: 0; /* Keep orbits behind text */
+}
+
+@keyframes rotateOrbit {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Inside .planet-orbit, the work-planet itself stays upright */
+.planet-orbit .work-planet {
+  position: absolute;
+  top: 0; right: 50%;
+  transform: translate(50%, -50%) scale(1.3);
+}
+
+.planet-orbit-2 {
+  /* override positioning */
+  top: auto;
+  right: 3%;
+  bottom: 5%;
+  left: auto;
+  
+  width: 180px;
+  height: 180px;
+  
+  /* reverse the spin so it goes the other way */
+  animation: rotateOrbit 45s linear infinite reverse;
+  z-index: 0; /* Keep orbits behind text */
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
   .experience {
     flex-direction: column;
@@ -121,3 +192,4 @@
     width: 100%;
   }
 }
+
