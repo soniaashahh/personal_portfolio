@@ -14,7 +14,7 @@ body::before {
 
 @keyframes starTwinkle {
   0%, 100% {
-    opacity:2;
+    opacity: 2;
     background-position: 0 0;
   }
   50% {
@@ -23,57 +23,54 @@ body::before {
   }
 }
 
-
 .page.work-page {
   background-color: #a8c7ff;
   min-height: 100vh;
-  padding: 40px 60px;
+  padding: 5vh 5vw 4vh;
   box-sizing: border-box;
   position: relative;
 }
 
-/* Work title styling */
-/* Work title styling - enhanced version */
-/* Work title styling - simplified without 3D */
 .work-title {
   text-align: left;
   font-size: 4.5rem;
   font-weight: 900;
   color: #003399;
-  margin-bottom: 30px;
-  margin-left: 50px;
+  margin: 6vh 0 3vh 2vw;
   -webkit-text-stroke: 1px white;
   text-shadow: 3px 3px 0px rgba(255, 255, 255, 0.8),
                6px 6px 10px rgba(0, 51, 153, 0.4);
   font-family: 'Arial Black', Helvetica, sans-serif;
   position: relative;
   display: inline-block;
-  z-index: 2; /* Keep this to ensure title stays above planets */
+  z-index: 2;
 }
 
-/* Remove the pseudo-element causing 3D issues */
 .work-title::after {
-  display: none; /* This will hide the after element completely */
+  display: none;
 }
 
-/* Experience section styling */
 .experiences {
   display: flex;
   flex-direction: column;
-  gap: 40px;
-  align-items: center;
-  margin-top: -40px;
+  gap: 6vh;
+  align-items: flex-start;
+  margin-top: -0.7vh;
   position: relative;
-  z-index: 2; /* Ensure experiences stay above planets */
+  z-index: 2;
+  padding-left: 10vw; /* shift right */
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .experience {
   display: flex;
   align-items: center;
   width: 100%;
-  max-width: 950px;
+  max-width: 95%;
   justify-content: flex-start;
-  gap: 75px;
+  gap: 4vw;
+  flex-wrap: wrap;
 }
 
 .experience-title {
@@ -84,42 +81,44 @@ body::before {
   white-space: nowrap;
   display: flex;
   align-items: center;
-  width: 220px;
+  justify-content: flex-end;
+  flex: 0 0 220px;
   text-align: right;
-  padding-right: 5px;
+  padding-right: 1vw;
+  height: 100%;
 }
 
 .project-box {
   background-color: #dbe7ff;
-  padding: 25px 30px;
+  padding: 1.4em;
   border-radius: 20px;
-  width: 550px;
+  flex: 1 1 70%;
+  min-width: 250px;
+  max-width: 720px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin-left: 5px;
+  margin: 0;
+  line-height: 1.3;
 }
 
-/* Base text color inside project-box */
 .project-box p {
   margin: 6px 0;
-  color:#003399;
+  color: #003399;
   font-weight: normal;
 }
 
-/* Only the inline labels get the bright blue */
 .project-box .project-label {
   color: #003399;
   margin-right: 4px;
 }
 
-/* Decorative Planets */
 .work-planet {
   position: absolute;
   width: 150px;
-  z-index: 0; /* Keep planets behind text */
+  z-index: 0;
 }
 
 .work-planet img {
@@ -139,57 +138,71 @@ body::before {
   transform: scale(1.3);
 }
 
-/* Planet orbits */
 .planet-orbit {
   position: absolute;
-  top: 30%; left: 10%;
-  width: 200px; height: 200px;
+  top: 30%;
+  left: 10%;
+  width: 200px;
+  height: 200px;
   animation: rotateOrbit 30s linear infinite;
   transform-origin: center center;
-  z-index: 0; /* Keep orbits behind text */
+  z-index: 0;
 }
 
 @keyframes rotateOrbit {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-/* Inside .planet-orbit, the work-planet itself stays upright */
 .planet-orbit .work-planet {
   position: absolute;
-  top: 0; right: 50%;
+  top: 0;
+  right: 50%;
   transform: translate(50%, -50%) scale(1.3);
 }
 
 .planet-orbit-2 {
-  /* override positioning */
   top: auto;
   right: 3%;
   bottom: 5%;
   left: auto;
-  
   width: 180px;
   height: 180px;
-  
-  /* reverse the spin so it goes the other way */
   animation: rotateOrbit 45s linear infinite reverse;
-  z-index: 0; /* Keep orbits behind text */
+  z-index: 0;
 }
 
-/* Responsive adjustments */
+/* Mobile Friendly Styles */
 @media (max-width: 768px) {
+  .experiences {
+    padding-left: 0;
+    align-items: center;
+  }
+
   .experience {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
+    align-items: stretch;
+    gap: 2vh;
   }
-  
+
   .experience-title {
-    margin-left: 10px;
+    text-align: left;
+    margin-bottom: 0.5vh;
+    width: auto;
+    justify-content: flex-start;
   }
-  
+
   .project-box {
     width: 100%;
+    max-width: 100%;
+  }
+
+  .planet-orbit,
+  .work-planet {
+    display: block;
   }
 }
-

@@ -1,4 +1,4 @@
-/* Global Reset */ 
+/* Global Reset */
 html, body {
     margin: 0;
     padding: 0;
@@ -9,7 +9,7 @@ html, body {
   /* About Page Styling */
   .about-page {
     background-color: #a6c8ff;
-    height: 100vh;
+    min-height: 100vh;
     font-family: 'Kadwa', serif;
     position: relative;
     display: flex;
@@ -31,19 +31,19 @@ html, body {
   
   /* Titles */
   .small-title {
-    font-size: 36px;
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
     color: #ffffffaa;
     margin: 0;
     font-weight: bold;
     text-align: center;
     width: 100%;
     position: relative;
-    top: 39px;
+    top: 20px;
     z-index: 1;
   }
   
   .about-title {
-    font-size: 70px;
+    font-size: clamp(2.5rem, 7vw, 4.375rem);
     color: #003399;
     font-family: 'Lalezar', cursive;
     margin: 0 0 30px 0;
@@ -51,7 +51,7 @@ html, body {
     text-align: center;
     width: 100%;
     position: relative;
-    top: 32px;
+    top: 15px;
     z-index: 1;
   }
   
@@ -59,11 +59,11 @@ html, body {
   .about-content {
     display: flex;
     justify-content: center;
-    align-items: center; 
-    gap: 198px;
+    align-items: center;
+    gap: 60px;
     flex-wrap: wrap;
     overflow: hidden;
-    width: 85%;
+    width: 95%;
     max-width: 1000px;
   }
   
@@ -79,14 +79,15 @@ html, body {
   
   /* Profile Image */
   .profile-img {
-    width: 240px;
+    width: 100%;
+    max-width: 240px;
     height: auto;
     border-radius: 12px;
   }
   
   /* Bio Name */
   .bio-name {
-    font-size: 30px;
+    font-size: 1.875rem;
     color: #003399;
     font-weight: bold;
     margin: 10px 0 5px 0;
@@ -95,7 +96,7 @@ html, body {
   
   /* Bio Subtitle */
   .bio-subtitle {
-    font-size: 16px;
+    font-size: 1rem;
     color: white;
     line-height: 1.5;
     margin-bottom: 12px;
@@ -109,19 +110,19 @@ html, body {
   /* Bio Description */
   .bio {
     max-width: 460px;
-    text-align: left;
+    text-align: center;
     padding-left: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-top: 30px;
   }
   
   .bio-description {
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 1.6;
     color: white;
-    font-weight: normal; 
-    margin-top: 55px;
+    font-weight: normal;
     z-index: 1;
     position: relative;
   }
@@ -175,61 +176,8 @@ html, body {
     }
   }
   
-  /* Mobile Adjustments */
-  @media (max-width: 768px) {
-    .about-title {
-      font-size: 45px;
-      margin-bottom: 20px;
-      top: 0;
-    }
-  
-    .small-title {
-      font-size: 26px;
-      top: 0;
-    }
-  
-    .about-content {
-      flex-direction: column;
-      align-items: center;
-      gap: 15px;
-      width: 95%;
-    }
-  
-    .image-container {
-      text-align: center;
-    }
-  
-    .bio {
-      text-align: center;
-      margin-top: 0;
-    }
-  
-    .profile-img {
-      width: 180px;
-    }
-  
-    .bio-name {
-      font-size: 22px;
-    }
-  
-    .bio-subtitle {
-      font-size: 14px;
-      top: 0;
-    }
-  
-    .bio-description {
-      font-size: 15px;
-      text-align: center;
-    }
-  
-    .planet-orbit,
-    .about-planet {
-      display: none;
-    }
-  }
-  
   /* Orbit Centers */
-.orbit-center {
+  .orbit-center {
     position: absolute;
     width: 120px;
     height: 120px;
@@ -276,6 +224,58 @@ html, body {
     }
     to {
       transform: rotate(360deg);
+    }
+  }
+  
+  /* Responsive Layout */
+  @media (max-width: 1024px) {
+    .about-content {
+      flex-direction: column;
+      gap: 30px;
+    }
+  
+    .bio {
+      margin-top: 0;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .about-title {
+      font-size: clamp(2rem, 6vw, 2.8rem);
+      margin-bottom: 20px;
+      top: 0;
+    }
+  
+    .small-title {
+      font-size: clamp(1.2rem, 4vw, 1.5rem);
+      top: 0;
+    }
+  
+    .about-content {
+      width: 100%;
+    }
+  
+    .profile-img {
+      width: 180px;
+    }
+  
+    .bio-name {
+      font-size: 1.375rem;
+    }
+  
+    .bio-subtitle {
+      font-size: 0.9rem;
+      top: 0;
+    }
+  
+    .bio-description {
+      font-size: 0.95rem;
+      text-align: center;
+    }
+  
+    .planet-orbit,
+    .about-planet {
+      display: none;
     }
   }
   
