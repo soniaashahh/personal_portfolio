@@ -15,43 +15,47 @@
   align-items: center;
   justify-content: center;
   padding: 10px 30px;
-  margin-top: 20px; /* Smaller margin to prevent overflow */
+  margin-top: 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .contact-heading {
-  font-size: 45px;
+  font-size: clamp(26px, 5vw, 45px);
   color: #ffffffaa;
   margin: 0;
   font-weight: bold;
   text-align: center;
   width: 100%;
   position: relative;
-  top: 39px;
-  margin-top: 15px; /* Smaller margin to prevent overflow */
+  top: clamp(0px, 4vh, 39px);
+  margin-top: clamp(5px, 2vh, 15px);
 }
 
 .contact-title {
-  font-size: 105px;
+  font-size: clamp(45px, 10vw, 105px);
   color: #003399;
   font-family: 'Lalezar', cursive;
-  margin: 0 0 30px 0;
+  margin: 0 0 clamp(20px, 3vh, 30px) 0;
   letter-spacing: 2px;
   text-align: center;
   width: 100%;
   position: relative;
-  top: 32px;
-  text-shadow: 
+  top: clamp(0px, 3vh, 32px);
+  text-shadow:
     -1px -1px 0 #ffffff40,
     1px -1px 0 #ffffff40,
     -1px 1px 0 #ffffff40,
     1px 1px 0 #ffffff40;
 }
 
+/* Fixed size star container regardless of screen size */
 .social-star {
   position: relative;
   width: 400px;
   height: 400px;
-  margin: 40px auto; /* Reduced from 50px to help with spacing */
+  margin: clamp(20px, 5vh, 40px) auto;
+  transform-origin: center center;
 }
 
 .star-svg {
@@ -71,7 +75,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1;
+  z-index: 3;
   transition: transform 0.3s;
 }
 
@@ -84,14 +88,14 @@
   transform: scale(1.1);
 }
 
-/* Corrected positioning on star points (scaled to 400x400 container) */
+/* Fixed positioning on star points */
 .icon1 { top: -13px; left: 175px; }     /* Top point (Instagram) */
 .icon2 { top: 120px; left: 369px; }     /* Top-right (GitHub) */
 .icon3 { top: 343px; left: 297px; }     /* Bottom-right (Gmail) */
-.icon4 { top: 120px; left: -19px; }     /* Top-left (LinkedIn) - mirrored with GitHub */
+.icon4 { top: 120px; left: -19px; }     /* Top-left (LinkedIn) */
 .icon5 { top: 343px; left: 53px; }      /* Bottom-left (Facebook) */
 
-/* Decorative Elements - More specific selectors */
+/* Decorative Elements */
 .contact-page .phone-icon {
   position: absolute;
   bottom: 10%;
@@ -102,7 +106,7 @@
 
 .contact-page .planet-top-right-contact {
   position: absolute;
-  top: 10% !important; /* Using !important to override any conflicting styles */
+  top: 10% !important;
   right: 8% !important;
   width: 80px;
   height: 80px;
@@ -112,7 +116,7 @@
 
 .contact-page .planet-bottom-left-contact {
   position: absolute;
-  bottom: 90% !important; /* Using !important to override any conflicting styles */
+  bottom: 90% !important;
   left: -10% !important;
   width: 120px;
   height: 120px;
@@ -121,56 +125,77 @@
 
 .contact-page .rocket2 {
   position: absolute;
-  transform: scale(0.4) rotate(40deg) !important; /* Fixed syntax error here */
-}
-
-@media (max-width: 768px) {
-  .contact-title {
-    font-size: 45px;
-    margin-bottom: 20px;
-    top: 0;
-  }
-
-  .contact-heading {
-    font-size: 26px;
-    top: 0;
-  }
-
-  .social-star {
-    width: 250px;
-    height: 250px;
-  }
-
-  .social-link {
-    width: 40px;
-    height: 40px;
-  }
-
-  .social-link img {
-    width: 24px;
-    height: 24px;
-  }
-
-  .planet-top-right-contact,
-  .planet-bottom-left-contact {
-    display: none;
-  }
-}
-/* Add this at the bottom of your CSS */
-
-.rocket2 {
+  transform: scale(0.4) rotate(40deg) !important;
   z-index: 0;
 }
 
+/* Maintain proper z-index stacking */
 .social-star {
   z-index: 2;
   position: relative;
 }
-
-.social-link {
-  z-index: 3; /* ensure links still appear above everything */
-}
-
 .star-svg {
   z-index: 2;
+}
+.social-link {
+  z-index: 3;
+}
+
+/* Mobile adjustments - preserve star size but adjust other elements */
+@media (max-width: 768px) {
+  .contact-page {
+    overflow-x: hidden;
+  }
+  
+  .contact-content {
+    padding: 10px 15px;
+    justify-content: flex-start;
+    margin-top: clamp(40px, 10vh, 80px); /* More space at top on mobile */
+  }
+  
+  /* Star container stays the same size but we add a scaling wrapper */
+  .star-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+    margin: 0 auto;
+    padding: 0;
+  }
+  
+  .social-star {
+    /* Fixed size regardless of screen size */
+    width: 400px;
+    height: 400px;
+    transform: scale(0.625); /* Scale to 250px visually while preserving positions */
+    transform-origin: center center;
+    margin: 0 auto;
+  }
+  
+  /* Keep original icon positions - they will scale with the container */
+  
+  /* Hide decorative elements on small screens */
+  .planet-top-right-contact,
+  .planet-bottom-left-contact {
+    display: none;
+  }
+  
+  /* Add space at the bottom for scrolling */
+  .contact-page::after {
+    content: '';
+    display: block;
+    height: 20vh;
+  }
+}
+
+/* Extra small screens - optimize scaling further */
+@media (max-width: 400px) {
+  .social-star {
+    transform: scale(0.5); /* Scale down further for very small screens */
+  }
+  
+  .contact-content {
+    margin-top: 20px;
+  }
 }

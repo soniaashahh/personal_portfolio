@@ -3,18 +3,18 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow: hidden;
   }
   
-  /* About Page Styling */
+  /* Default behavior for desktop - no scrolling */
   .about-page {
     background-color: #a6c8ff;
+    height: 100vh; /* Fixed height on desktop */
     min-height: 100vh;
     font-family: 'Kadwa', serif;
     position: relative;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    overflow: hidden; /* Hide overflow by default on desktop */
   }
   
   /* About Section */
@@ -22,7 +22,7 @@ html, body {
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center; /* Center vertically on desktop */
     align-items: center;
     padding: 10px 30px;
     position: relative;
@@ -62,7 +62,6 @@ html, body {
     align-items: center;
     gap: 60px;
     flex-wrap: wrap;
-    overflow: hidden;
     width: 95%;
     max-width: 1000px;
   }
@@ -227,7 +226,7 @@ html, body {
     }
   }
   
-  /* Responsive Layout */
+  /* Responsive Layout - Tablet */
   @media (max-width: 1024px) {
     .about-content {
       flex-direction: column;
@@ -239,7 +238,23 @@ html, body {
     }
   }
   
+  /* Mobile Specific Changes - Enable scrolling only on mobile */
   @media (max-width: 768px) {
+    html, body {
+      overflow-y: auto; /* Allow vertical scrolling on mobile */
+    }
+    
+    .about-page {
+      height: auto; /* Auto height on mobile */
+      min-height: 100vh;
+      overflow-y: visible; /* Allow content to exceed container on mobile */
+    }
+    
+    .about-section {
+      justify-content: flex-start; /* Start from top on mobile */
+      padding: 50px 20px; /* Add good padding on mobile */
+    }
+  
     .about-title {
       font-size: clamp(2rem, 6vw, 2.8rem);
       margin-bottom: 20px;
@@ -253,6 +268,7 @@ html, body {
   
     .about-content {
       width: 100%;
+      margin-bottom: 40px; /* Add space at bottom on mobile */
     }
   
     .profile-img {
@@ -273,9 +289,32 @@ html, body {
       text-align: center;
     }
   
+    /* Hide decorative elements on mobile to save space */
     .planet-orbit,
     .about-planet {
       display: none;
     }
   }
   
+  /* Additional fixes for very small screens */
+  @media (max-width: 480px) {
+    .about-section {
+      padding: 40px 15px;
+    }
+    
+    .small-title {
+      margin-bottom: 5px;
+    }
+    
+    .about-title {
+      margin-bottom: 15px;
+    }
+  
+    .profile-img {
+      width: 150px;
+    }
+    
+    .bio-description {
+      padding: 0 10px;
+    }
+  }

@@ -29,11 +29,12 @@ body::before {
   padding: 5vh 5vw 4vh;
   box-sizing: border-box;
   position: relative;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .work-title {
   text-align: left;
-  font-size: 4.5rem;
+  font-size: clamp(2.5rem, 5vw, 4.5rem); /* Responsive font size */
   font-weight: 900;
   color: #003399;
   margin: 6vh 0 3vh 2vw;
@@ -74,7 +75,7 @@ body::before {
 }
 
 .experience-title {
-  font-size: 2.4rem;
+  font-size: clamp(1.8rem, 4vw, 2.4rem); /* Responsive font size */
   color: white;
   font-weight: 800;
   font-family: 'Labrada', serif;
@@ -108,6 +109,7 @@ body::before {
   margin: 6px 0;
   color: #003399;
   font-weight: normal;
+  font-size: clamp(0.9rem, 2vw, 1rem); /* Responsive font size */
 }
 
 .project-box .project-label {
@@ -119,6 +121,7 @@ body::before {
   position: absolute;
   width: 150px;
   z-index: 0;
+  display: block; /* Ensure visible on all devices */
 }
 
 .work-planet img {
@@ -176,33 +179,72 @@ body::before {
   z-index: 0;
 }
 
-/* Mobile Friendly Styles */
+/* Mobile Styles - Enhanced for better flexibility */
 @media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden; /* Prevent horizontal scroll */
+  }
+  
+  .page.work-page {
+    padding: 3vh 4vw 10vh; /* Adjusted padding for mobile */
+    height: auto; /* Allow content to determine height */
+    min-height: 100vh;
+  }
+  
+  .work-title {
+    margin: 3vh 0 3vh 0; /* Adjusted margins */
+    text-align: center;
+    width: 100%;
+  }
+  
   .experiences {
     padding-left: 0;
     align-items: center;
+    gap: 4vh; /* Reduce gap on mobile */
   }
-
+  
   .experience {
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
     gap: 2vh;
+    width: 92%; /* Slightly narrower for margin */
   }
-
+  
   .experience-title {
-    text-align: left;
-    margin-bottom: 0.5vh;
-    width: auto;
-    justify-content: flex-start;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    flex: none;
+    padding-right: 0;
+    margin-bottom: 0;
   }
-
+  
   .project-box {
     width: 100%;
     max-width: 100%;
+    padding: 1.2em; /* Slightly reduced padding */
   }
-
-  .planet-orbit,
+  
+  /* Adjust planet sizes and positions for mobile */
   .work-planet {
-    display: block;
+    width: 100px; /* Smaller on mobile */
+  }
+  
+  .planet-orbit {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .planet-orbit-2 {
+    width: 100px;
+    height: 100px;
+  }
+  
+  /* Optional: Hide some decorative elements on very small screens */
+  @media (max-width: 480px) {
+    .work-planet-top-left {
+      opacity: 0.5; /* Make less prominent */
+      transform: scale(0.8);
+    }
   }
 }
