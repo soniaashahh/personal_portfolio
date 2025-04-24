@@ -214,7 +214,7 @@
   }
 
   .contact-page .planet-bottom-left-contact {
-    transform: scale(0.13); /* much smaller */
+    transform: scale(0.2); /* much smaller */
     bottom: -5%;            /* moved further down */
     left: -25%;             /* moved further left */
   }
