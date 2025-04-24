@@ -126,7 +126,6 @@
   z-index: 0;
 }
 
-/* Mobile adjustments */
 @media (max-width: 768px) {
   .contact-page {
     overflow-x: hidden;
@@ -188,7 +187,6 @@
   }
 }
 
-/* Extra small screens */
 @media (max-width: 480px) {
   .contact-content {
     margin-top: 60px;
@@ -216,7 +214,8 @@
 
   .contact-page .planet-bottom-left-contact {
     transform: scale(0.3);
-    left: -15%; /* FIXED: moved further left on iPhone to not block text */
+    bottom: 2%; /* moved further down */
+    left: -18%; /* moved further left */
   }
 
   .contact-page .rocket2 {
