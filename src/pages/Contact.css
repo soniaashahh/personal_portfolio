@@ -118,6 +118,7 @@
   width: 120px;
   height: 120px;
   transform: scale(0.5);
+  
 }
 
 .contact-page .rocket2 {
@@ -213,10 +214,11 @@
   }
 
   .contact-page .planet-bottom-left-contact {
-    transform: scale(0.3);
-    bottom: 2%; /* moved further down */
-    left: -18%; /* moved further left */
+    transform: scale(0.13); /* much smaller */
+    bottom: -10%;            /* moved further down */
+    left: -45%;             /* moved further left */
   }
+  
 
   .contact-page .rocket2 {
     transform: scale(0.25) rotate(40deg) !important;
