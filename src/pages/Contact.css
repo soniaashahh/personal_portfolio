@@ -215,8 +215,8 @@
 
   .contact-page .planet-bottom-left-contact {
     transform: scale(0.13); /* much smaller */
-    bottom: -10%;            /* moved further down */
-    left: -45%;             /* moved further left */
+    bottom: -5%;            /* moved further down */
+    left: -25%;             /* moved further left */
   }
   
 
