@@ -15,7 +15,7 @@
   align-items: center;
   justify-content: center;
   padding: 10px 30px;
-  margin-top: 20px;
+  margin-top: 0; /* pulled up */
   width: 100%;
   box-sizing: border-box;
 }
@@ -23,39 +23,39 @@
 .contact-heading {
   font-size: clamp(26px, 5vw, 45px);
   color: #ffffffaa;
-  margin: 0;
   font-weight: bold;
   text-align: center;
   width: 100%;
-  position: relative;
-  top: clamp(0px, 4vh, 39px);
-  margin-top: clamp(5px, 2vh, 15px);
+  margin-top: 89px; /* moved down slightly */
+  margin-bottom: 5px;
 }
+
 
 .contact-title {
   font-size: clamp(45px, 10vw, 105px);
   color: #003399;
   font-family: 'Lalezar', cursive;
-  margin: 0 0 clamp(20px, 3vh, 30px) 0;
   letter-spacing: 2px;
   text-align: center;
   width: 100%;
-  position: relative;
-  top: clamp(0px, 3vh, 32px);
   text-shadow:
     -1px -1px 0 #ffffff40,
     1px -1px 0 #ffffff40,
     -1px 1px 0 #ffffff40,
     1px 1px 0 #ffffff40;
+  margin-top: -14px; /* reduced */
+  margin-bottom: 20px; /* reduced */
 }
+
 
 /* Fixed size star container regardless of screen size */
 .social-star {
   position: relative;
   width: 400px;
   height: 400px;
-  margin: clamp(20px, 5vh, 40px) auto;
+  margin: 10px auto; /* reduced */
   transform-origin: center center;
+  transform: scale(0.9); /* slight reduction */
 }
 
 .star-svg {
@@ -89,11 +89,11 @@
 }
 
 /* Fixed positioning on star points */
-.icon1 { top: -13px; left: 175px; }     /* Top point (Instagram) */
-.icon2 { top: 120px; left: 369px; }     /* Top-right (GitHub) */
-.icon3 { top: 343px; left: 297px; }     /* Bottom-right (Gmail) */
-.icon4 { top: 120px; left: -19px; }     /* Top-left (LinkedIn) */
-.icon5 { top: 343px; left: 53px; }      /* Bottom-left (Facebook) */
+.icon1 { top: -13px; left: 175px; }     
+.icon2 { top: 120px; left: 369px; }     
+.icon3 { top: 343px; left: 297px; }     
+.icon4 { top: 120px; left: -19px; }     
+.icon5 { top: 343px; left: 53px; }      
 
 /* Decorative Elements */
 .contact-page .phone-icon {
@@ -123,14 +123,12 @@
   transform: scale(0.5);
 }
 
-/* Keep original rocket animation and positioning */
 .contact-page .rocket2 {
   position: absolute;
   transform: scale(0.4) rotate(40deg) !important;
   z-index: 0;
 }
 
-/* Maintain proper z-index stacking */
 .social-star {
   z-index: 2;
   position: relative;
@@ -142,64 +140,61 @@
   z-index: 3;
 }
 
-/* Mobile adjustments - preserve star size but adjust other elements */
+/* Mobile adjustments */
 @media (max-width: 768px) {
   .contact-page {
     overflow-x: hidden;
   }
-  
+
   .contact-content {
     padding: 10px 15px;
     justify-content: flex-start;
-    margin-top: clamp(50px, 15vh, 110px); /* More space at top on mobile to prevent header cutoff */
+    margin-top: clamp(50px, 15vh, 110px);
   }
-  
+
   .contact-heading {
-    margin-bottom: 5px; /* Tighten spacing */
+    margin-bottom: 5px;
+    top: 0;
   }
-  
+
   .contact-title {
-    margin-bottom: clamp(30px, 5vh, 45px); /* Add more space below title */
+    margin-bottom: clamp(30px, 5vh, 45px);
+    top: 0;
   }
-  
-  /* Create a centered wrapper for the star */
+
   .star-wrapper {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: visible;
-    transform: translateY(-20px); /* Move star up slightly */
+    transform: translateY(-20px);
   }
-  
+
   .social-star {
-    /* Keep same size but scale for mobile */
-    transform: scale(0.7); /* Slightly bigger than previous */
+    transform: scale(0.7);
     margin: 0 auto;
   }
-  
-  /* Make planets visible but smaller on mobile */
+
   .contact-page .planet-top-right-contact {
     display: block;
     top: 15%;
     right: 5%;
     transform: scale(0.3);
   }
-  
+
   .contact-page .planet-bottom-left-contact {
     display: block;
     bottom: 8%;
     left: 5%;
     transform: scale(0.35);
   }
-  
-  /* Keep rocket visible and maintain original animation */
+
   .contact-page .rocket2 {
     display: block;
     transform: scale(0.3) rotate(40deg) !important;
   }
-  
-  /* Add space at the bottom for scrolling */
+
   .contact-page::after {
     content: '';
     display: block;
@@ -207,47 +202,46 @@
   }
 }
 
-/* Extra small screens - optimize scaling further */
+/* Extra small screens */
 @media (max-width: 480px) {
   .contact-content {
-    margin-top: 60px; /* Fixed pixel value for smaller screens */
+    margin-top: 60px;
   }
-  
+
   .contact-heading {
-    font-size: 22px; /* Fixed size for smallest screens */
-    margin-top: 25px; /* Push down slightly */
+    font-size: 22px;
+    margin-top: 25px;
+    top: 0;
   }
-  
+
   .contact-title {
-    font-size: 42px; /* Fixed size for smallest screens */
+    font-size: 42px;
+    top: 0;
   }
-  
+
   .social-star {
-    transform: scale(0.65); /* Make star slightly bigger */
-    margin-top: -15px; /* Move star up a bit */
+    transform: scale(0.65);
+    margin-top: -15px;
   }
-  
-  /* Make planets even smaller but still visible */
+
   .contact-page .planet-top-right-contact {
     transform: scale(0.25);
   }
-  
+
   .contact-page .planet-bottom-left-contact {
     transform: scale(0.3);
   }
-  
-  /* Keep rocket visible but slightly smaller */
+
   .contact-page .rocket2 {
     transform: scale(0.25) rotate(40deg) !important;
   }
 }
 
-/* iPhone SE and other very small screens */
 @media (max-width: 375px) {
   .contact-content {
     margin-top: 45px;
   }
-  
+
   .social-star {
     transform: scale(0.6);
     margin-top: -20px;
