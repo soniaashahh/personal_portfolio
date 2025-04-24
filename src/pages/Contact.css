@@ -15,7 +15,7 @@
   align-items: center;
   justify-content: center;
   padding: 10px 30px;
-  margin-top: 0; /* pulled up */
+  margin-top: 0;
   width: 100%;
   box-sizing: border-box;
 }
@@ -26,10 +26,9 @@
   font-weight: bold;
   text-align: center;
   width: 100%;
-  margin-top: 89px; /* moved down slightly */
+  margin-top: 89px;
   margin-bottom: 5px;
 }
-
 
 .contact-title {
   font-size: clamp(45px, 10vw, 105px);
@@ -43,19 +42,18 @@
     1px -1px 0 #ffffff40,
     -1px 1px 0 #ffffff40,
     1px 1px 0 #ffffff40;
-  margin-top: -14px; /* reduced */
-  margin-bottom: 20px; /* reduced */
+  margin-top: -14px;
+  margin-bottom: 20px;
 }
 
-
-/* Fixed size star container regardless of screen size */
 .social-star {
   position: relative;
   width: 400px;
   height: 400px;
-  margin: 10px auto; /* reduced */
+  margin: 10px auto;
   transform-origin: center center;
-  transform: scale(0.9); /* slight reduction */
+  transform: scale(0.9);
+  z-index: 2;
 }
 
 .star-svg {
@@ -64,6 +62,7 @@
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 2;
 }
 
 .social-link {
@@ -88,14 +87,12 @@
   transform: scale(1.1);
 }
 
-/* Fixed positioning on star points */
 .icon1 { top: -13px; left: 175px; }     
 .icon2 { top: 120px; left: 369px; }     
 .icon3 { top: 343px; left: 297px; }     
 .icon4 { top: 120px; left: -19px; }     
 .icon5 { top: 343px; left: 53px; }      
 
-/* Decorative Elements */
 .contact-page .phone-icon {
   position: absolute;
   bottom: 10%;
@@ -127,17 +124,6 @@
   position: absolute;
   transform: scale(0.4) rotate(40deg) !important;
   z-index: 0;
-}
-
-.social-star {
-  z-index: 2;
-  position: relative;
-}
-.star-svg {
-  z-index: 2;
-}
-.social-link {
-  z-index: 3;
 }
 
 /* Mobile adjustments */
@@ -230,6 +216,7 @@
 
   .contact-page .planet-bottom-left-contact {
     transform: scale(0.3);
+    left: -15%; /* FIXED: moved further left on iPhone to not block text */
   }
 
   .contact-page .rocket2 {
