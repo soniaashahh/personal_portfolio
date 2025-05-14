@@ -301,64 +301,46 @@ body {
   }
 }
 
-@media (orientation: landscape) and (max-height: 500px) {
+@media (max-width: 480px) {
   .home-page {
-    padding: 3% 5%;
+    padding-top: 5vh;
+    justify-content: flex-start;
+  }
+
+  .hero {
+    margin-top: 1rem;
+    padding-top: 0.5rem;
   }
 
   .text-layer .hero .welcome {
-    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    font-size: 1.5rem;
+    margin-bottom: 0.2rem;
   }
 
   .text-layer .hero .title {
-    font-size: clamp(2.8rem, 8vw, 4rem);
-    white-space: nowrap;
+    font-size: 2.8rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
   }
 
-  @keyframes rocketFly {
-    0% {
-      transform: translate(-50%, -50%) rotate(3deg) scale(0.4);
-      left: -10%;
-      top: 50%;
-    }
-    25% {
-      left: 30%;
-      top: 40%;
-      transform: translate(-50%, -50%) rotate(15deg) scale(0.4);
-    }
-    50% {
-      left: 60%;
-      top: 20%;
-      transform: translate(-50%, -50%) rotate(-10deg) scale(0.4);
-    }
-    75% {
-      left: 90%;
-      top: 40%;
-      transform: translate(-50%, -50%) rotate(20deg) scale(0.4);
-    }
-    100% {
-      left: 110%;
-      top: 50%;
-      transform: translate(-50%, -50%) rotate(3deg) scale(0.4);
-    }
+  .rocket {
+    width: 15px;
+    top: 80%;
+  }
+
+  .orbit-center-home.top-right .large-planet {
+    width: 80px;
+    margin-top: -40px;
+    margin-left: -40px;
+  }
+
+  .orbit-center-home.bottom-left .large-planet {
+    width: 65px;
+    margin-top: -35px;
+    margin-left: -35px;
   }
 }
 
-/* Add a container for content if needed */
-.content-container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 5;
-}
-
-.home-page {
-  position: relative;
-  min-height: 100vh;
-  overflow: hidden;
-  z-index: 1;
-}
 
 /* ✨ Animated stars background */
 .home-page::before {

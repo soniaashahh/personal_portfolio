@@ -50,8 +50,8 @@
   position: relative;
   width: 480px;
   height: 480px;
-  margin: 0 auto;          /* remove top/bottom spacing */
-  margin-top: -65px;       /* pull star upward */
+  margin: 0 auto;
+  margin-top: -65px;
   transform-origin: center center;
   transform: scale(1);
   z-index: 2;
@@ -88,12 +88,11 @@
   transform: scale(1.1);
 }
 
-.icon1 { top: px; left: 217px; }     /* top point - Instagram */
+.icon1 { top: 0px; left: 217px; }     /* top point - Instagram */
 .icon2 { top: 155px; left: 444px; }    /* right top - GitHub */
-.icon3 { top: 440px; left: 370px; }    /* bottom right - Gmail */
-.icon4 { top: 155px; left: -10px; }      /* left top - LinkedIn */
+.icon3 { top: 440px; left: 360px; }    /* bottom right - Gmail */
+.icon4 { top: 155px; left: -10px; }    /* left top - LinkedIn */
 .icon5 { top: 440px; left: 70px; }     /* bottom left - Facebook */
-     
 
 .contact-page .phone-icon {
   position: absolute;
@@ -120,7 +119,6 @@
   width: 120px;
   height: 120px;
   transform: scale(0.5);
-  
 }
 
 .contact-page .rocket2 {
@@ -129,6 +127,7 @@
   z-index: 0;
 }
 
+/* Tablet and small desktop */
 @media (max-width: 768px) {
   .contact-page {
     overflow-x: hidden;
@@ -165,29 +164,18 @@
   }
 
   .contact-page .planet-top-right-contact {
-    position: absolute;
-    top: 10%;
-    right: 8%;
-    width: 80px;
-    height: 80px;
-    transform: scale(0.5);
-    z-index: 2;
-    animation: slow-spin 20s linear infinite;
+    top: 15%;
+    right: 5%;
+    transform: scale(0.3);
   }
-  
+
   .contact-page .planet-bottom-left-contact {
-    position: absolute;
-    bottom: 10%;
-    left: -5%;
-    width: 120px;
-    height: 120px;
-    transform: scale(0.5);
-    animation: slow-spin 25s linear infinite;
+    bottom: 8%;
+    left: 5%;
+    transform: scale(0.35);
   }
-  
 
   .contact-page .rocket2 {
-    display: block;
     transform: scale(0.3) rotate(40deg) !important;
   }
 
@@ -198,6 +186,7 @@
   }
 }
 
+/* Mobile phones */
 @media (max-width: 480px) {
   .contact-content {
     margin-top: 60px;
@@ -220,21 +209,23 @@
   }
 
   .contact-page .planet-top-right-contact {
-    transform: scale(0.25);
+    transform: scale(0.15);
+    top: 10%;
+    right: 3%;
   }
 
   .contact-page .planet-bottom-left-contact {
-    transform: scale(0.2); /* much smaller */
-    bottom: -5%;            /* moved further down */
-    left: -25%;             /* moved further left */
+    transform: scale(0.15);
+    bottom: -10%;
+    left: -30%;
   }
-  
 
   .contact-page .rocket2 {
     transform: scale(0.25) rotate(40deg) !important;
   }
 }
 
+/* Very small phones */
 @media (max-width: 375px) {
   .contact-content {
     margin-top: 45px;
@@ -244,13 +235,16 @@
     transform: scale(0.6);
     margin-top: -20px;
   }
-}
 
-@keyframes slow-spin {
-  0% {
-    transform: rotate(0deg) scale(0.5);
+  .contact-page .planet-top-right-contact {
+    transform: scale(0.12);
+    top: 12%;
+    right: 2%;
   }
-  100% {
-    transform: rotate(360deg) scale(0.5);
+
+  .contact-page .planet-bottom-left-contact {
+    transform: scale(0.12);
+    bottom: -12%;
+    left: -35%;
   }
 }

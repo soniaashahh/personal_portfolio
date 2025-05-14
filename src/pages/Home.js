@@ -6,13 +6,7 @@ function Home() {
   const topPlanetRef = useRef(null);
   const bottomPlanetRef = useRef(null);
 
-  const handleRotate = (ref, animationClass) => {
-    if (ref.current) {
-      ref.current.classList.remove(animationClass);
-      void ref.current.offsetWidth;
-      ref.current.classList.add(animationClass);
-    }
-  };
+
 
   return (
     <div className="home-page">

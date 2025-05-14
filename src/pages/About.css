@@ -335,46 +335,95 @@ html, body {
     }
   }
   
-  /* Additional fixes for very small screens */
-  @media (max-width: 480px) {
+  @media (max-width: 768px) {
+    html, body {
+      overflow-y: auto;
+    }
+  
+    .about-page {
+      height: auto;
+      min-height: 100vh;
+      overflow-y: visible;
+    }
+  
     .about-section {
-      padding: 100px 15px 40px; /* Even more top padding on smallest screens */
+      justify-content: flex-start;
+      padding: 60px 16px 30px; /* ↓ reduced top/bottom padding */
     }
-    
-    .small-title {
-      margin-bottom: 8px;
-    }
-    
+  
     .about-title {
-      margin-bottom: 15px;
+      font-size: clamp(2rem, 6vw, 2.8rem);
+      margin-bottom: 10px; /* ↓ smaller bottom margin */
+      top: 0;
+    }
+  
+    .small-title {
+      font-size: clamp(1.1rem, 3.8vw, 1.4rem);
+      margin-bottom: 2px;
+      top: 0;
+    }
+  
+    .about-content {
+      width: 100%;
+      margin-top: 5px;
+      margin-bottom: 25px; /* ↓ reduce space at bottom */
+      gap: 20px;
     }
   
     .profile-img {
-      width: 150px;
+      width: 160px;
     }
-    
+  
+    .bio-name {
+      font-size: 1.3rem;
+    }
+  
+    .bio-subtitle {
+      font-size: 0.85rem;
+      top: 0;
+    }
+  
     .bio-description {
+      font-size: 0.9rem;
       padding: 0 10px;
     }
-    
-    /* Further reduce planet size on smallest screens */
+  
+    /* Planets smaller and repositioned */
     .planet-orbit,
     .about-planet {
       transform: scale(0.4);
     }
-    
+  
     .planet-orbit {
       width: 80px;
       height: 80px;
+      top: 10%;
+      left: 2%;
     }
-    
+  
+    .about-orbit-2 {
+      bottom: 4%;
+      right: 2%;
+    }
+  
     .orbit-center {
       width: 60px;
       height: 60px;
     }
-    
+  
     .orbiting-planet img {
       width: 40px;
       height: 40px;
     }
+  
+    .orbit-center.top-right {
+      top: 3%;
+      right: 10px;
+    }
+  
+    .orbit-center.bottom-right {
+      bottom: 1%;
+      right: 5px;
+    }
   }
+  

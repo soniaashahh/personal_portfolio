@@ -4,9 +4,11 @@
   padding: 5vh 5vw;
   box-sizing: border-box;
   overflow-x: hidden;
+  overflow-y: auto;
   position: relative;
 }
 
+/* Title */
 .work-title {
   text-align: center;
   font-size: clamp(2.5rem, 5vw, 4.5rem);
@@ -19,6 +21,7 @@
   margin: 4vh 0;
 }
 
+/* Grid */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -29,6 +32,7 @@
   justify-items: center;
 }
 
+/* Cards */
 .flip-card {
   background-color: transparent;
   width: 300px;
@@ -48,7 +52,8 @@
   transform: rotateY(180deg);
 }
 
-.flip-card-front, .flip-card-back {
+.flip-card-front,
+.flip-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -71,6 +76,14 @@
   text-align: center;
 }
 
+.flip-card-back {
+  transform: rotateY(180deg);
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Tech Badges */
 .tech-badges {
   display: flex;
   flex-wrap: wrap;
@@ -87,115 +100,48 @@
   font-weight: 600;
 }
 
-/* 🎨 Color-coded tech badges */
-.tech-badge.React {
-  background-color: #c3e6ff;
-}
+/* 🎨 Colored Tags */
+.tech-badge.React { background-color: #c3e6ff; }
+.tech-badge.JavaScript { background-color: #ddd6ff; }
+.tech-badge.Figma { background-color: #e0c9f4; }
+.tech-badge.HTML { background-color: #fadefb; }
+.tech-badge.CSS { background-color: #f0e0eb; }
+.tech-badge.DataScience { background-color: #c4f2fe; }
+.tech-badge.UIDesign { background-color: #c6c4ff; }
+.tech-badge.Firebase { background-color: #ceffe6; }
+.tech-badge.AI { background-color: #e7feef; }
+.tech-badge.C\+\+,
+.tech-badge.C { background-color: #f8e7fd; }
+.tech-badge.OOP { background-color: #fdfcff; }
+.tech-badge.Sustainability { background-color: #bae7f0; }
+.tech-badge.Python { background-color: #b5d0ff; }
+.tech-badge.CNN,
+.tech-badge.KNN { background-color: #d0f0ff; }
 
-.tech-badge.JavaScript {
-  background-color: #ddd6ff;
-}
-
-.tech-badge.Figma {
-  background-color: #e0c9f4;
-}
-
-.tech-badge.HTML {
-  background-color: #fadefb;
-}
-
-.tech-badge.CSS {
-  background-color: #f0e0eb;
-}
-
-.tech-badge.DataScience {
-  background-color: #c4f2fe;
-}
-
-.tech-badge.UIDesign {
-  background-color: #c6c4ff;
-}
-
-
-.tech-badge.Firebase {
-  background-color: #ceffe6;
-}
-
-.tech-badge.AI {
-  background-color: #e7feef;
-}
-
-.tech-badge.C\+\+ {  
-  background-color: #f8e7fd;
-}
-.tech-badge.C{
-  background-color: #f8e7fd;
-}
-.tech-badge.OOP {
-  background-color: #fdfcff;
-}
-
-.tech-badge.Sustainability {
-  background-color: #bae7f0;
-}
-
-.tech-badge.Python {
-  background-color: #b5d0ff;
-}
-
-.tech-badge.CNN {
-  background-color: #d0f0ff;
-}
-
-.tech-badge.KNN {
-  background-color: #d0f0ff;
-}
-
-
-
-.flip-card-back {
-  transform: rotateY(180deg);
-  text-align: center;
-  font-size: 0.9rem;
-  line-height: 1.4;
-}
-
-/* Animation keyframes for orbital rotation */
+/* Rotating Planets */
 @keyframes rotateOrbit {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
-/* Animation keyframes for circular movement */
 @keyframes circleMovement {
-  0% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-  25% {
-    transform: translate(20px, -20px) rotate(90deg);
-  }
-  50% {
-    transform: translate(0, -40px) rotate(180deg);
-  }
-  75% {
-    transform: translate(-20px, -20px) rotate(270deg);
-  }
-  100% {
-    transform: translate(0, 0) rotate(360deg);
-  }
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(20px, -20px) rotate(90deg); }
+  50% { transform: translate(0, -40px) rotate(180deg); }
+  75% { transform: translate(-20px, -20px) rotate(270deg); }
+  100% { transform: translate(0, 0) rotate(360deg); }
 }
 
-/* Rotating planet container styles */
-.planet-orbit {
+.planet-orbit,
+.planet-orbit-2 {
   position: absolute;
   width: 210px;
   height: 210px;
   animation: rotateOrbit 30s linear infinite, circleMovement 15s ease-in-out infinite;
   z-index: 0;
+}
+
+.planet-orbit {
   top: 10%;
   left: 2%;
 }
@@ -204,44 +150,87 @@
   width: 220px;
   height: 220px;
   animation: rotateOrbit 45s linear infinite reverse, circleMovement 20s ease-in-out infinite reverse;
-  position: absolute;
   right: 2%;
   bottom: 10%;
-  z-index: 0;
 }
 
-.planet-orbit img, .planet-orbit-2 img {
+.planet-orbit img,
+.planet-orbit-2 img {
   width: 100%;
   height: auto;
 }
 
-/* 🌟 Starfield Background Animation */
+/* 🌟 Starfield Background */
 .page::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
-  width: 200%;
-  height: 200%;
+  width: 100%;
+  height: 100%;
   background-image:
     radial-gradient(white 2.5px, transparent 2.5px),
     radial-gradient(white 2.5px, transparent 2.5px);
   background-size: 100px 100px, 150px 150px;
   background-position: 0 0, 50px 50px;
-  animation: twinkle 15s linear infinite;
+  animation: twinkle 30s linear infinite;
   z-index: 0;
   opacity: 0.3;
   pointer-events: none;
 }
 
 @keyframes twinkle {
-  0% {
-    transform: translate(0px, 0px);
+  0% { transform: translate(0px, 0px); }
+  50% { transform: translate(-25px, 25px); }
+  100% { transform: translate(0px, 0px); }
+}
+
+/* 📱 Mobile Optimizations */
+@media (max-width: 768px) {
+  .page.work-page {
+    padding: 3vh 4vw;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100vh;
   }
-  50% {
-    transform: translate(-25px, 25px);
+
+  .planet-orbit,
+  .planet-orbit-2 {
+    width: 120px;
+    height: 120px;
   }
-  100% {
-    transform: translate(0px, 0px);
+
+  .planet-orbit {
+    top: 5%;
+    left: 2%;
+  }
+
+  .planet-orbit-2 {
+    bottom: 2%;
+    right: 2%;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+
+  .flip-card {
+    width: 90vw;
+    height: 210px;
+  }
+
+  .flip-card-front h2 {
+    font-size: 0.95rem;
+  }
+
+  .flip-card-back {
+    font-size: 0.85rem;
+  }
+
+  .work-title {
+    font-size: 2.5rem;
+    margin: 2vh 0;
   }
 }
