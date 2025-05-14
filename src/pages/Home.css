@@ -378,25 +378,26 @@ body {
   html, body {
     height: 100vh;
     overflow-x: hidden;
-    overflow-y: auto; /* allow scroll if needed for safety */
+    overflow-y: auto;
     margin: 0;
     padding: 0;
   }
 
   .home-page {
     height: 100vh;
-    overflow: visible; /* make sure rocket/planets show */
+    overflow: visible;
     padding: 4% 5%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start; /* ✅ allows .hero to move up */
     position: relative;
   }
 
   .hero {
     padding: 0;
-    margin: -15px auto 0 auto;
+    margin-top: -80px; /* ✅ this now actually moves hero upward */
+    margin-bottom: 0;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -407,17 +408,16 @@ body {
   .text-layer .hero .welcome {
     font-size: 2rem;
     line-height: 1.2;
-    margin-top: -100px; /* ⬅️ increased from -80px to -100px */
+    margin-top: 0; /* ✅ don't double-negative margins here */
     margin-bottom: 0.25rem;
     text-align: center;
     width: 100%;
   }
-  
 
   .text-layer .hero .title {
-    font-size: 3.0rem; /* bigger */
+    font-size: 3.0rem;
     line-height: 1.1;
-    margin-top: -35px;
+    margin-top: -10px; /* slight upward nudge */
     margin-bottom: 0.5rem;
     text-align: center;
     width: 100%;
@@ -433,7 +433,7 @@ body {
     right: 0;
     margin: 0 auto;
     z-index: 1;
-    max-width: 50px; /* limit size safely */
+    max-width: 50px;
   }
 
   .orbit-center-home.top-right .large-planet,
