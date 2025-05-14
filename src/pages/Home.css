@@ -352,3 +352,42 @@ body {
   position: relative;
   z-index: 5;
 }
+
+.home-page {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* ✨ Animated stars background */
+.home-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background-image:
+    radial-gradient(white 2.5px, transparent 2.5px),
+    radial-gradient(white 2.5px, transparent 2.5px);
+  background-size: 100px 100px, 150px 150px;
+  background-position: 0 0, 50px 50px;
+  animation: twinkle 12s linear infinite;
+  z-index: 0;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* 🌟 Twinkle animation */
+@keyframes twinkle {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  50% {
+    transform: translate(-25px, 25px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}

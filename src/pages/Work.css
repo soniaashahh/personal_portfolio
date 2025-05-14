@@ -1,284 +1,247 @@
-body::before {
-  content: '';
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background:
-    radial-gradient(3px 3px at 20% 30%, rgba(255,255,255,0.9), transparent),
-    radial-gradient(1.5px 1.5px at 70% 10%, rgba(255,255,255,0.7), transparent),
-    radial-gradient(3px 3px at 40% 80%, rgba(255,255,255,0.8), transparent);
-  background-size: 200px 200px;
-  animation: starTwinkle 10s linear infinite;
-  pointer-events: none;
-  z-index: 1;
-}
-
-@keyframes starTwinkle {
-  0%, 100% {
-    opacity: 2;
-    background-position: 0 0;
-  }
-  50% {
-    opacity: 4;
-    background-position: 100px 100px;
-  }
-}
-
 .page.work-page {
   background-color: #a8c7ff;
   min-height: 100vh;
-  padding: 5vh 5vw 4vh;
+  padding: 5vh 5vw;
   box-sizing: border-box;
+  overflow-x: hidden;
   position: relative;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .work-title {
-  text-align: left;
-  font-size: clamp(2.5rem, 5vw, 4.5rem); /* Responsive font size */
+  text-align: center;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
   font-weight: 900;
   color: #003399;
-  margin: 6vh 0 3vh 2vw;
   -webkit-text-stroke: 1px white;
   text-shadow: 3px 3px 0px rgba(255, 255, 255, 0.8),
                6px 6px 10px rgba(0, 51, 153, 0.4);
   font-family: 'Arial Black', Helvetica, sans-serif;
+  margin: 4vh 0;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  max-width: 1000px;
+  margin: 0 auto;
+  gap: 2rem;
+  padding: 2rem;
+  justify-items: center;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 230px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
   position: relative;
-  display: inline-block;
-  z-index: 2;
-  max-width: 100%; /* Ensure text doesn't overflow container */
-  overflow-wrap: break-word; /* Allow text to break to prevent overflow */
-  word-wrap: break-word; /* For broader browser support */
-}
-
-.work-title::after {
-  display: none;
-}
-
-.experiences {
-  display: flex;
-  flex-direction: column;
-  gap: 6vh;
-  align-items: flex-start;
-  margin-top: -0.7vh;
-  position: relative;
-  z-index: 2;
-  padding-left: 10vw; /* shift right */
   width: 100%;
-  box-sizing: border-box;
-}
-
-.experience {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  max-width: 95%;
-  justify-content: flex-start;
-  gap: 4vw;
-  flex-wrap: wrap;
-}
-
-.experience-title {
-  font-size: clamp(1.8rem, 4vw, 2.4rem); /* Responsive font size */
-  color: white;
-  font-weight: 800;
-  font-family: 'Labrada', serif;
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  flex: 0 0 220px;
-  text-align: right;
-  padding-right: 1vw;
   height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
 }
 
-.project-box {
-  background-color: #dbe7ff;
-  padding: 1.4em;
-  border-radius: 20px;
-  flex: 1 1 70%;
-  min-width: 250px;
-  max-width: 720px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
   box-sizing: border-box;
+  background-color: #dbe7ff;
+  color: #003399;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  margin: 0;
-  line-height: 1.3;
+  align-items: center;
+  justify-content: center;
 }
 
-.project-box p {
-  margin: 6px 0;
+.flip-card-front h2 {
+  font-size: 1rem;
+  margin: 0 0 0.5rem;
+  text-align: center;
+}
+
+.tech-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.tech-badge {
+  background-color: #ffffffcc;
   color: #003399;
-  font-weight: normal;
-  font-size: clamp(0.9rem, 2vw, 1rem); /* Responsive font size */
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
 }
 
-.project-box .project-label {
-  color: #003399;
-  margin-right: 4px;
+/* 🎨 Color-coded tech badges */
+.tech-badge.React {
+  background-color: #c3e6ff;
 }
 
-.work-planet {
-  position: absolute;
-  width: 150px;
-  z-index: 0;
-  display: block; /* Ensure visible on all devices */
+.tech-badge.JavaScript {
+  background-color: #ddd6ff;
 }
 
-.work-planet img {
-  width: 100%;
-  height: auto;
+.tech-badge.Figma {
+  background-color: #e0c9f4;
 }
 
-.work-planet-top-left {
-  top: 35%;
-  left: 3%;
-  transform: scale(1.3);
+.tech-badge.HTML {
+  background-color: #fadefb;
 }
 
-.work-planet-bottom-right {
-  bottom: 5%;
-  right: 3%;
-  transform: scale(1.3);
+.tech-badge.CSS {
+  background-color: #f0e0eb;
 }
 
-.planet-orbit {
-  position: absolute;
-  top: 30%;
-  left: 10%;
-  width: 200px;
-  height: 200px;
-  animation: rotateOrbit 30s linear infinite;
-  transform-origin: center center;
-  z-index: 0;
+.tech-badge.DataScience {
+  background-color: #c4f2fe;
 }
 
+.tech-badge.UIDesign {
+  background-color: #c6c4ff;
+}
+
+
+.tech-badge.Firebase {
+  background-color: #ceffe6;
+}
+
+.tech-badge.AI {
+  background-color: #e7feef;
+}
+
+.tech-badge.C\+\+ {  
+  background-color: #f8e7fd;
+}
+.tech-badge.C{
+  background-color: #f8e7fd;
+}
+.tech-badge.OOP {
+  background-color: #fdfcff;
+}
+
+.tech-badge.Sustainability {
+  background-color: #bae7f0;
+}
+
+.tech-badge.Python {
+  background-color: #b5d0ff;
+}
+
+.tech-badge.CNN {
+  background-color: #d0f0ff;
+}
+
+.tech-badge.KNN {
+  background-color: #d0f0ff;
+}
+
+
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Animation keyframes for orbital rotation */
 @keyframes rotateOrbit {
-  from {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(360deg);
   }
 }
 
-.planet-orbit .work-planet {
+/* Animation keyframes for circular movement */
+@keyframes circleMovement {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(20px, -20px) rotate(90deg);
+  }
+  50% {
+    transform: translate(0, -40px) rotate(180deg);
+  }
+  75% {
+    transform: translate(-20px, -20px) rotate(270deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+
+/* Rotating planet container styles */
+.planet-orbit {
   position: absolute;
-  top: 0;
-  right: 50%;
-  transform: translate(50%, -50%) scale(1.3);
+  width: 210px;
+  height: 210px;
+  animation: rotateOrbit 30s linear infinite, circleMovement 15s ease-in-out infinite;
+  z-index: 0;
+  top: 10%;
+  left: 2%;
 }
 
 .planet-orbit-2 {
-  top: auto;
-  right: 3%;
-  bottom: 5%;
-  left: auto;
-  width: 180px;
-  height: 180px;
-  animation: rotateOrbit 45s linear infinite reverse;
+  width: 220px;
+  height: 220px;
+  animation: rotateOrbit 45s linear infinite reverse, circleMovement 20s ease-in-out infinite reverse;
+  position: absolute;
+  right: 2%;
+  bottom: 10%;
   z-index: 0;
 }
 
-/* Mobile Styles - Enhanced for better flexibility */
-@media (max-width: 768px) {
-  html, body {
-    overflow-x: hidden; /* Prevent horizontal scroll */
-  }
-  
-  .page.work-page {
-    padding: 3vh 4vw 10vh; /* Adjusted padding for mobile */
-    height: auto; /* Allow content to determine height */
-    min-height: 100vh;
-  }
-  
-  .work-title {
-    margin: 3vh 0 3vh 0; /* Adjusted margins */
-    text-align: center;
-    width: 100%;
-    font-size: 2.2rem; /* Fixed size for mobile to prevent cutoff */
-    white-space: normal; /* Allow text to wrap */
-    hyphens: auto; /* Allow hyphenation for better text wrapping */
-    padding: 0 10px; /* Add some padding on the sides */
-    box-sizing: border-box;
-  }
-  
-  .experiences {
-    padding-left: 0;
-    align-items: center;
-    gap: 4vh; /* Reduce gap on mobile */
-  }
-  
-  .experience {
-    flex-direction: column;
-    align-items: center;
-    gap: 2vh;
-    width: 92%; /* Slightly narrower for margin */
-  }
-  
-  .experience-title {
-    text-align: center;
-    justify-content: center;
-    width: 100%;
-    flex: none;
-    padding-right: 0;
-    margin-bottom: 0;
-    white-space: normal; /* Allow text to wrap if needed */
-  }
-  
-  .project-box {
-    width: 100%;
-    max-width: 100%;
-    padding: 1.2em; /* Slightly reduced padding */
-  }
-  
-  /* Adjust planet sizes and positions for mobile but keep them visible */
-  .work-planet {
-    width: 80px; /* Smaller on mobile but still visible */
-  }
-  
-  .work-planet-top-left {
-    top: 35%;
-    left: 3%;
-    transform: scale(0.9); /* Scale down but still visible */
-  }
-  
-  .work-planet-bottom-right {
-    bottom: 5%;
-    right: 3%;
-    transform: scale(0.9); /* Scale down but still visible */
-  }
-  
-  .planet-orbit {
-    width: 100px;
-    height: 100px;
-  }
-  
-  .planet-orbit-2 {
-    width: 80px;
-    height: 80px;
-  }
+.planet-orbit img, .planet-orbit-2 img {
+  width: 100%;
+  height: auto;
 }
 
-/* Extra small devices adjustment */
-@media (max-width: 480px) {
-  .work-title {
-    font-size: 1.8rem; /* Even smaller on very small screens */
+/* 🌟 Starfield Background Animation */
+.page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background-image:
+    radial-gradient(white 2.5px, transparent 2.5px),
+    radial-gradient(white 2.5px, transparent 2.5px);
+  background-size: 100px 100px, 150px 150px;
+  background-position: 0 0, 50px 50px;
+  animation: twinkle 15s linear infinite;
+  z-index: 0;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+@keyframes twinkle {
+  0% {
+    transform: translate(0px, 0px);
   }
-  
-  .work-planet {
-    width: 60px; /* Smaller but still visible */
+  50% {
+    transform: translate(-25px, 25px);
   }
-  
-  .planet-orbit {
-    width: 80px;
-    height: 80px;
-  }
-  
-  .planet-orbit-2 {
-    width: 60px;
-    height: 60px;
+  100% {
+    transform: translate(0px, 0px);
   }
 }

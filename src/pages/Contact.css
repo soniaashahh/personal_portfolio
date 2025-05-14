@@ -48,11 +48,12 @@
 
 .social-star {
   position: relative;
-  width: 400px;
-  height: 400px;
-  margin: 10px auto;
+  width: 480px;
+  height: 480px;
+  margin: 0 auto;          /* remove top/bottom spacing */
+  margin-top: -65px;       /* pull star upward */
   transform-origin: center center;
-  transform: scale(0.9);
+  transform: scale(1);
   z-index: 2;
 }
 
@@ -87,11 +88,12 @@
   transform: scale(1.1);
 }
 
-.icon1 { top: -13px; left: 175px; }     
-.icon2 { top: 120px; left: 369px; }     
-.icon3 { top: 343px; left: 297px; }     
-.icon4 { top: 120px; left: -19px; }     
-.icon5 { top: 343px; left: 53px; }      
+.icon1 { top: px; left: 217px; }     /* top point - Instagram */
+.icon2 { top: 155px; left: 444px; }    /* right top - GitHub */
+.icon3 { top: 440px; left: 370px; }    /* bottom right - Gmail */
+.icon4 { top: 155px; left: -10px; }      /* left top - LinkedIn */
+.icon5 { top: 440px; left: 70px; }     /* bottom left - Facebook */
+     
 
 .contact-page .phone-icon {
   position: absolute;
@@ -163,18 +165,26 @@
   }
 
   .contact-page .planet-top-right-contact {
-    display: block;
-    top: 15%;
-    right: 5%;
-    transform: scale(0.3);
+    position: absolute;
+    top: 10%;
+    right: 8%;
+    width: 80px;
+    height: 80px;
+    transform: scale(0.5);
+    z-index: 2;
+    animation: slow-spin 20s linear infinite;
   }
-
+  
   .contact-page .planet-bottom-left-contact {
-    display: block;
-    bottom: 8%;
-    left: 5%;
-    transform: scale(0.35);
+    position: absolute;
+    bottom: 10%;
+    left: -5%;
+    width: 120px;
+    height: 120px;
+    transform: scale(0.5);
+    animation: slow-spin 25s linear infinite;
   }
+  
 
   .contact-page .rocket2 {
     display: block;
@@ -233,5 +243,14 @@
   .social-star {
     transform: scale(0.6);
     margin-top: -20px;
+  }
+}
+
+@keyframes slow-spin {
+  0% {
+    transform: rotate(0deg) scale(0.5);
+  }
+  100% {
+    transform: rotate(360deg) scale(0.5);
   }
 }

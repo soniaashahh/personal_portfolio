@@ -53,7 +53,7 @@ function Contact() {
         <img src="/images/planet4.png" alt="Planet" />
       </div>
       <div className="rocket rocket2">
-        <img src="/images/rocket2.png" alt="Rocket" />
+        <img src="/images/rocket.png" alt="Rocket" />
       </div>
     </div>
   );
