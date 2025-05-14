@@ -375,6 +375,11 @@ body {
 }
 
 @media (max-width: 480px) {
+  body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+
   .home-page {
     padding: 4% 5%;
     display: flex;
@@ -386,7 +391,7 @@ body {
 
   .hero {
     padding: 0;
-    margin: 0 auto;
+    margin: -15px auto 0 auto; /* move up and center */
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -397,6 +402,7 @@ body {
   .text-layer .hero .welcome {
     font-size: 1.75rem;
     line-height: 1.2;
+    margin-top: -10px;
     margin-bottom: 0.25rem;
     text-align: center;
     width: 100%;
@@ -405,7 +411,7 @@ body {
   .text-layer .hero .title {
     font-size: 2.8rem;
     line-height: 1.1;
-    margin-top: 0;
+    margin-top: -10px;
     margin-bottom: 0.75rem;
     text-align: center;
     width: 100%;
@@ -414,20 +420,21 @@ body {
   }
 
   .rocket {
-    width: 18vw;
+    width: 5vw;
     top: 75%;
     z-index: 1;
   }
 
   .orbit-center-home.top-right .large-planet {
-    width: 60px;
-    margin-top: -30px;
-    margin-left: -30px;
+    width: 100px;
+    margin-top: -45px;
+    margin-left: -45px;
   }
 
   .orbit-center-home.bottom-left .large-planet {
-    width: 55px;
-    margin-top: -28px;
-    margin-left: -28px;
+    width: 100px;
+    margin-top: -42px;
+    margin-left: -42px;
   }
 }
+
