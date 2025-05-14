@@ -377,14 +377,15 @@ body {
 @media (max-width: 480px) {
   html, body {
     height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto; /* allow scroll if needed for safety */
     margin: 0;
     padding: 0;
   }
 
   .home-page {
     height: 100vh;
-    overflow: hidden;
+    overflow: visible; /* make sure rocket/planets show */
     padding: 4% 5%;
     display: flex;
     flex-direction: column;
@@ -404,16 +405,16 @@ body {
   }
 
   .text-layer .hero .welcome {
-    font-size: 1.75rem;
+    font-size: 2rem; /* bigger */
     line-height: 1.2;
-    margin-top: -45px;
+    margin-top: -50px;
     margin-bottom: 0.25rem;
     text-align: center;
     width: 100%;
   }
 
   .text-layer .hero .title {
-    font-size: 3rem;
+    font-size: 3.3rem; /* bigger */
     line-height: 1.1;
     margin-top: -35px;
     margin-bottom: 0.75rem;
@@ -424,14 +425,14 @@ body {
   }
 
   .rocket {
+    position: absolute;
     transform: scale(0.3) rotate(3deg);
     top: 75%;
     left: 0;
     right: 0;
     margin: 0 auto;
-    position: absolute;
-    max-height: 50px;
-    overflow: hidden;
+    z-index: 1;
+    max-width: 50px; /* limit size safely */
   }
 
   .orbit-center-home.top-right .large-planet,
@@ -442,7 +443,7 @@ body {
   }
 
   .orbiting-planet-home {
-    overflow: hidden;
+    overflow: visible;
     max-width: 100vw;
   }
 }
