@@ -379,7 +379,6 @@ body {
     height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
-    overflow: hidden;
     margin: 0;
     padding: 0;
   }
@@ -429,13 +428,14 @@ body {
 
   .rocket {
     position: absolute;
-    transform: scale(0.1) rotate(3deg);
+    transform: scale(0.3) rotate(3deg);
+    width: 10px;
     top: 55%;
     left: 0;
     right: 0;
     margin: 0 auto;
     z-index: 1;
-    max-width: 50px;
+    max-width: 20px;
   }
 
   .orbit-center-home.top-right .large-planet,
