@@ -428,8 +428,8 @@ body {
 
   .rocket {
     position: absolute;
-    transform: scale(0.3) rotate(3deg);
-    top: 75%;
+    transform: scale(0.1) rotate(3deg);
+    top: 55%;
     left: 0;
     right: 0;
     margin: 0 auto;
