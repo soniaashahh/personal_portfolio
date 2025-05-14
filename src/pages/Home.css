@@ -404,7 +404,7 @@ body {
   }
 
   .text-layer .hero .welcome {
-    font-size: 2.3rem;
+    font-size: 1.75rem;
     line-height: 1.2;
     margin-top: -45px;
     margin-bottom: 0.25rem;
@@ -413,7 +413,7 @@ body {
   }
 
   .text-layer .hero .title {
-    font-size: 3.5rem;
+    font-size: 3rem;
     line-height: 1.1;
     margin-top: -35px;
     margin-bottom: 0.75rem;
