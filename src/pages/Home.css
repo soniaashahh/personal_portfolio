@@ -429,13 +429,12 @@ body {
   .rocket {
     position: absolute;
     transform: scale(0.3) rotate(3deg);
-    width: 10px;
     top: 55%;
     left: 0;
     right: 0;
     margin: 0 auto;
     z-index: 1;
-    max-width: 20px;
+    max-width: 50px;
   }
 
   .orbit-center-home.top-right .large-planet,
