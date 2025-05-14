@@ -389,14 +389,14 @@ body {
     padding: 4% 5%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center !important;
     justify-content: flex-start; /* ✅ allows .hero to move up */
     position: relative;
   }
 
   .hero {
     padding: 0;
-    margin-top: -80px; /* ✅ this now actually moves hero upward */
+    margin-top: -30px; /* 🔁 was -80px, now less negative */
     margin-bottom: 0;
     width: 100%;
     display: flex;
@@ -404,6 +404,7 @@ body {
     align-items: center;
     text-align: center;
   }
+  
 
   .text-layer .hero .welcome {
     font-size: 2rem;
