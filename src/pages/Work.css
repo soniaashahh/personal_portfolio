@@ -186,6 +186,8 @@
 }
 
 /* 📱 Mobile Optimizations */
+
+/* Small tablets + large phones */
 @media (max-width: 768px) {
   .page.work-page {
     padding: 3vh 4vw;
@@ -213,11 +215,11 @@
   .card-grid {
     display: grid;
     grid-template-columns: 1fr;
-    place-items: center; /* ✅ this truly centers all grid items */
+    place-items: center; /* ✅ center all grid items */
     gap: 1.5rem;
     padding: 1rem;
   }
-  
+
   .flip-card {
     width: 90vw;
     height: 210px;
@@ -237,38 +239,47 @@
   }
 }
 
+/* Mobile phones */
 @media (max-width: 480px) {
-  /* Fix project section title being cut off */
+  /* Prevent "Projects" heading cutoff */
   .projects-page {
-    padding-top: 80px; /* add top padding to avoid header overlap */
+    padding-top: 120px;
   }
 
   .projects-heading {
     text-align: center;
     font-size: 2.5rem;
-    margin-top: 100px;
-    margin-bottom: 1rem;
+    margin: 0 0 1.5rem 0;
     padding: 0 10px;
     word-wrap: break-word;
   }
 
   /* Center and resize project cards */
+  .card-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+
   .project-box {
-    margin: 0 auto 20px auto; /* ✅ centered horizontally */
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto 20px;
     padding: 20px;
-    max-width: 90%;
-    width: 100%;
     box-sizing: border-box;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* ✅ centers card content */
+    align-items: center;
     justify-content: center;
+    background-color: #dbe7ff; /* optional: keep if you want contrast */
   }
-  
 
   .project-title {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     text-align: center;
     margin-bottom: 0.5rem;
     word-wrap: break-word;
@@ -288,4 +299,3 @@
     padding: 0 5px;
   }
 }
-
