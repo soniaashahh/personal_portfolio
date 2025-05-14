@@ -188,63 +188,76 @@
 
 /* Mobile phones */
 @media (max-width: 480px) {
+  .contact-page {
+    overflow-x: hidden;
+    padding: 0 10px;
+  }
+
   .contact-content {
-    margin-top: 60px;
+    margin-top: 30px;
+    padding: 0 5px;
   }
 
   .contact-heading {
     font-size: 22px;
-    margin-top: 25px;
-    top: 0;
+    margin-top: 40px;
+    margin-bottom: 5px;
   }
 
   .contact-title {
-    font-size: 42px;
-    top: 0;
+    font-size: 38px;
+    margin-top: -5px;
+    margin-bottom: 20px;
+    white-space: normal;
   }
 
   .social-star {
-    transform: scale(0.65);
-    margin-top: -15px;
+    width: 340px;
+    height: 340px;
+    margin-top: -30px;
+    transform: scale(1); /* more size on mobile */
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+  }
+
+  .icon1 { top: 0px; left: 145px; }
+  .icon2 { top: 100px; left: 300px; }
+  .icon3 { top: 310px; left: 240px; }
+  .icon4 { top: 100px; left: -15px; }
+  .icon5 { top: 310px; left: 55px; }
+
+  .social-link {
+    width: 44px;
+    height: 44px;
+  }
+
+  .social-link img {
+    width: 24px;
+    height: 24px;
   }
 
   .contact-page .planet-top-right-contact {
-    transform: scale(0.15);
-    top: 10%;
-    right: 3%;
+    transform: scale(0.25);
+    top: 8%;
+    right: 5%;
   }
 
   .contact-page .planet-bottom-left-contact {
-    transform: scale(0.15);
-    bottom: -10%;
-    left: -30%;
+    transform: scale(0.22);
+    bottom: 8%;
+    left: 0%;
   }
 
   .contact-page .rocket2 {
     transform: scale(0.25) rotate(40deg) !important;
+    bottom: 5%;
+    right: 10%;
+    position: absolute;
+  }
+
+  .contact-page::after {
+    display: none; /* reduce extra scroll space */
   }
 }
 
-/* Very small phones */
-@media (max-width: 375px) {
-  .contact-content {
-    margin-top: 45px;
-  }
-
-  .social-star {
-    transform: scale(0.6);
-    margin-top: -20px;
-  }
-
-  .contact-page .planet-top-right-contact {
-    transform: scale(0.12);
-    top: 12%;
-    right: 2%;
-  }
-
-  .contact-page .planet-bottom-left-contact {
-    transform: scale(0.12);
-    bottom: -12%;
-    left: -35%;
-  }
-}

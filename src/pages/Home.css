@@ -373,3 +373,61 @@ body {
     transform: translate(0px, 0px);
   }
 }
+
+@media (max-width: 480px) {
+  .home-page {
+    padding: 4% 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero {
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .text-layer .hero .welcome {
+    font-size: 1.75rem;
+    line-height: 1.2;
+    margin-bottom: 0.25rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  .text-layer .hero .title {
+    font-size: 2.8rem;
+    line-height: 1.1;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    text-align: center;
+    width: 100%;
+    white-space: normal;
+    letter-spacing: 1px;
+  }
+
+  .rocket {
+    width: 18vw;
+    top: 75%;
+    z-index: 1;
+  }
+
+  .orbit-center-home.top-right .large-planet {
+    width: 60px;
+    margin-top: -30px;
+    margin-left: -30px;
+  }
+
+  .orbit-center-home.bottom-left .large-planet {
+    width: 55px;
+    margin-top: -28px;
+    margin-left: -28px;
+  }
+}
