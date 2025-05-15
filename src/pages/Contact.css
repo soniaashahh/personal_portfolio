@@ -130,14 +130,15 @@
 /* Tablet and small desktop */
 @media (max-width: 480px) {
   html, body {
-    overflow: hidden; /* ✅ Prevent any scrolling */
-    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto; /* ✅ allow scroll if needed */
+    height: auto;      /* ✅ allow height to grow */
   }
 
   .contact-page {
-    overflow: hidden; /* ✅ Prevent internal scroll */
-    padding: 0 10px;
+    overflow: hidden;  /* ✅ no internal scroll for this section */
     height: 100vh;
+    padding: 0 10px;
   }
 
   .contact-content {
