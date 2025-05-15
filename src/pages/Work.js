@@ -35,7 +35,7 @@ const projects = [
       'A game where the player faces obstacles such as barrels, fireballs, and platforms to reach the Kong and advance to the next level. ',
   },
   {
-    title: 'Wesbite: Next Generation Innovators',
+    title: 'Website: Next Generation Innovators',
     tech: ['React', 'JavaScript', 'Figma'],
     description:
       'Designed the website for Next Generation Innovators, a nonprofit that introduces local middle school students to versatile STEM topics through engaging and accessible educational content.',
