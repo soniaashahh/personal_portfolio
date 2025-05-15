@@ -377,26 +377,27 @@ body {
 @media (max-width: 480px) {
   html, body {
     height: 100vh;
-    overflow-x: hidden;
-    overflow-y: auto;
+    overflow: hidden; /* Changed from auto to hidden to prevent scrolling */
     margin: 0;
     padding: 0;
+    position: fixed; /* Added to further ensure no scrolling */
+    width: 100%; /* Ensure full width */
   }
 
   .home-page {
     height: 100vh;
-    overflow: visible;
+    overflow: hidden; /* Changed from visible to hidden */
     padding: 4% 5%;
     display: flex;
     flex-direction: column;
     align-items: center !important;
-    justify-content: flex-start; /* ✅ allows .hero to move up */
+    justify-content: flex-start;
     position: relative;
   }
 
   .hero {
     padding: 0;
-    margin-top: 150px; /* 🔁 was -80px, now less negative */
+    margin-top: 150px;
     margin-bottom: 0;
     width: 100%;
     display: flex;
@@ -404,12 +405,11 @@ body {
     align-items: center;
     text-align: center;
   }
-  
 
   .text-layer .hero .welcome {
     font-size: 2rem;
     line-height: 1.2;
-    margin-top: 0; /* ✅ don't double-negative margins here */
+    margin-top: 0;
     margin-bottom: 0.25rem;
     text-align: center;
     width: 100%;
@@ -418,7 +418,7 @@ body {
   .text-layer .hero .title {
     font-size: 3.0rem;
     line-height: 1.1;
-    margin-top: -10px; /* slight upward nudge */
+    margin-top: -10px;
     margin-bottom: 0.5rem;
     text-align: center;
     width: 100%;
