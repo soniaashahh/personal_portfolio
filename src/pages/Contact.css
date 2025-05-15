@@ -1,3 +1,4 @@
+/* Contact Page Styles */
 .contact-page {
   display: flex;
   flex-direction: column;
@@ -88,11 +89,11 @@
   transform: scale(1.1);
 }
 
-.icon1 { top: 0px; left: 217px; }     /* top point - Instagram */
-.icon2 { top: 155px; left: 444px; }    /* right top - GitHub */
-.icon3 { top: 440px; left: 360px; }    /* bottom right - Gmail */
-.icon4 { top: 155px; left: -10px; }    /* left top - LinkedIn */
-.icon5 { top: 440px; left: 70px; }     /* bottom left - Facebook */
+.icon1 { top: 0px; left: 217px; }
+.icon2 { top: 155px; left: 444px; }
+.icon3 { top: 440px; left: 360px; }
+.icon4 { top: 155px; left: -10px; }
+.icon5 { top: 440px; left: 70px; }
 
 .contact-page .phone-icon {
   position: absolute;
@@ -123,20 +124,20 @@
 
 .contact-page .rocket2 {
   position: absolute;
-  transform: scale(0.4) rotate(40deg) !important;
+  transform: scale(0.4) rotate(40deg);
   z-index: 0;
 }
 
-/* Tablet and small desktop */
+/* Mobile Styles */
 @media (max-width: 480px) {
   html, body {
     overflow-x: hidden;
-    overflow-y: auto; /* ✅ allow scroll if needed */
-    height: auto;      /* ✅ allow height to grow */
+    overflow-y: auto;
+    height: auto;
   }
 
   .contact-page {
-    overflow: hidden;  /* ✅ no internal scroll for this section */
+    overflow: hidden;
     height: 100vh;
     padding: 0 10px;
   }
@@ -168,11 +169,10 @@
     left: 50%;
   }
 
-  /* Adjust icon positions for smaller star */
   .icon1 { top: 0px; left: 145px; }
   .icon2 { top: 100px; left: 300px; }
   .icon3 { top: 310px; left: 240px; }
-  .icon4 { top: 100px; left: -15px; }
+  .icon4 { top: 100px; left: -20px; }
   .icon5 { top: 310px; left: 55px; }
 
   .social-link {
@@ -194,17 +194,35 @@
   .contact-page .planet-bottom-left-contact {
     transform: scale(0.22);
     bottom: 8%;
-    left: -15%; /* ✅ pushed farther left */
+    left: -15%;
   }
 
   .contact-page .rocket2 {
-    transform: scale(0.25) rotate(40deg) !important;
     bottom: 5%;
     right: 10%;
     position: absolute;
+    animation: rocketMobileLaunch 12s ease-in-out infinite;
+    transform: scale(0.25) rotate(40deg);
   }
 
   .contact-page::after {
     display: none;
+  }
+}
+
+@keyframes rocketMobileLaunch {
+  0% {
+    transform: translate(0, 0) scale(0.25) rotate(40deg);
+    opacity: 1;
+  }
+  25% {
+    transform: translate(80vw, -30vh) scale(0.25) rotate(50deg);
+  }
+  50% {
+    transform: translate(140vw, -60vh) scale(0.25) rotate(60deg);
+  }
+  100% {
+    transform: translate(200vw, -100vh) scale(0.25) rotate(70deg);
+    opacity: 0;
   }
 }
