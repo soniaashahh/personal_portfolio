@@ -242,9 +242,11 @@
 /* Mobile phones */
 @media (max-width: 480px) {
   /* Prevent "Projects" heading cutoff */
-  .projects-page {
-    padding-top: 160px;
-  }
+  /* New */
+.work-page {
+  padding-top: 160px;
+}
+
 
   .projects-heading {
     text-align: center;
