@@ -239,23 +239,21 @@
   }
 }
 
-/* Mobile phones */
 @media (max-width: 480px) {
-  /* Push everything below fixed NavBar */
+  /* Prevent "Projects" heading cutoff - increased padding */
   .work-page {
-    padding-top: 140px; /* Adjust if your NavBar is taller or shorter */
+    padding-top: 180px; /* Increased from 160px to 180px */
   }
-
-  /* Projects heading styling */
-  .work-title {
+  
+  .projects-heading {
     text-align: center;
     font-size: 2.5rem;
-    margin-bottom: 1.5rem;
+    margin: 20px 0 1.5rem 0; /* Added top margin for extra spacing */
     padding: 0 10px;
     word-wrap: break-word;
   }
-
-  /* Center and stack project cards */
+  
+  /* Center and resize project cards */
   .card-grid {
     display: flex;
     flex-direction: column;
@@ -264,34 +262,39 @@
     gap: 1.5rem;
     padding: 1rem;
   }
-
-  .flip-card {
+  
+  .project-box {
     width: 90%;
     max-width: 400px;
-    height: auto;
-  }
-
-  .flip-card-front h2 {
-    font-size: 1.1rem;
-    text-align: center;
-  }
-
-  .flip-card-back {
-    font-size: 0.95rem;
-    padding: 1rem;
-    text-align: center;
-  }
-
-  /* Tags inside cards */
-  .tech-badges {
+    margin: 0 auto 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 0.5rem;
+    background-color: #dbe7ff;
   }
-
-  .tech-badge {
-    font-size: 0.8rem;
-    padding: 0.3rem 0.6rem;
+  
+  .project-title {
+    font-size: 1.25rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    word-wrap: break-word;
+  }
+  
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .project-description {
+    font-size: 0.95rem;
+    text-align: center;
+    padding: 0 5px;
   }
 }

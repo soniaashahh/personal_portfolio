@@ -24,7 +24,7 @@ const projects = [
   },
   {
     title: 'Tree Savings',
-    tech: ['React', 'Figma', 'UI Design'],
+    tech: ['React', 'Firebase', 'UI Design'],
     description:
     "A mobile app built with React Native that tracks students' spending/saving to allow for better habits and increase financial literacy.",
   },
