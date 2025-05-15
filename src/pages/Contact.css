@@ -1,4 +1,5 @@
-/* Contact Page Styles */
+@import url('https://fonts.googleapis.com/css2?family=Kadwa:wght@400;700&family=Lalezar&display=swap');
+
 .contact-page {
   display: flex;
   flex-direction: column;
@@ -19,6 +20,8 @@
   margin-top: 0;
   width: 100%;
   box-sizing: border-box;
+  position: relative;
+  z-index: 2;
 }
 
 .contact-heading {
@@ -124,11 +127,11 @@
 
 .contact-page .rocket2 {
   position: absolute;
-  transform: scale(0.4) rotate(40deg);
+  width: 60px;
+  height: auto;
   z-index: 0;
 }
 
-/* Mobile Styles */
 @media (max-width: 480px) {
   html, body {
     overflow-x: hidden;
@@ -140,11 +143,13 @@
     overflow: hidden;
     height: 100vh;
     padding: 0 10px;
+    position: relative;
   }
 
   .contact-content {
     margin-top: 30px;
     padding: 0 5px;
+    z-index: 2;
   }
 
   .contact-heading {
@@ -198,11 +203,11 @@
   }
 
   .contact-page .rocket2 {
-    bottom: 5%;
-    right: 10%;
-    position: absolute;
-    animation: rocketMobileLaunch 12s ease-in-out infinite;
-    transform: scale(0.25) rotate(40deg);
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%) scale(0.3) rotate(25deg);
+    animation: rocketMobileFlyBelow 6s ease-in-out infinite;
+    z-index: 0;
   }
 
   .contact-page::after {
@@ -210,19 +215,17 @@
   }
 }
 
-@keyframes rocketMobileLaunch {
+@keyframes rocketMobileFlyBelow {
   0% {
-    transform: translate(0, 0) scale(0.25) rotate(40deg);
-    opacity: 1;
+    transform: translate(-50%, 0) scale(0.3) rotate(25deg);
   }
   25% {
-    transform: translate(80vw, -30vh) scale(0.25) rotate(50deg);
+    transform: translate(0, -10vh) scale(0.3) rotate(35deg);
   }
   50% {
-    transform: translate(140vw, -60vh) scale(0.25) rotate(60deg);
+    transform: translate(50vw, -20vh) scale(0.3) rotate(50deg);
   }
   100% {
-    transform: translate(200vw, -100vh) scale(0.25) rotate(70deg);
-    opacity: 0;
+    transform: translate(100vw, -40vh) scale(0.3) rotate(70deg);
   }
 }
