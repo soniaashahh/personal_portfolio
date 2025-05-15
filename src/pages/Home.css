@@ -375,24 +375,25 @@ body {
 }
 
 @media (max-width: 480px) {
-  html, body {
-    height: 100vh;
-    overflow: hidden; /* Changed from auto to hidden to prevent scrolling */
-    margin: 0;
-    padding: 0;
-    position: fixed; /* Added to further ensure no scrolling */
-    width: 100%; /* Ensure full width */
-  }
-
+  /* Only disable scroll on the home page */
   .home-page {
     height: 100vh;
-    overflow: hidden; /* Changed from visible to hidden */
+    overflow: hidden;
     padding: 4% 5%;
     display: flex;
     flex-direction: column;
-    align-items: center !important;
+    align-items: center;
     justify-content: flex-start;
     position: relative;
+  }
+
+  /* Allow scroll on all other pages */
+  html, body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: auto;
+    position: static;
+    width: 100%;
   }
 
   .hero {
@@ -416,7 +417,7 @@ body {
   }
 
   .text-layer .hero .title {
-    font-size: 3.0rem;
+    font-size: 3rem;
     line-height: 1.1;
     margin-top: -10px;
     margin-bottom: 0.5rem;
