@@ -236,7 +236,7 @@ body {
     left: -40px;
     transform: scale(0.3) rotate(45deg);
     z-index: 1;
-    animation: rocketLaunch 8s ease-in-out infinite;
+    animation: rocketLaunch 16s ease-in-out infinite;
   }
 
   .orbit-center-home.top-right .large-planet,
