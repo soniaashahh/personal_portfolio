@@ -240,20 +240,19 @@
 }
 
 @media (max-width: 480px) {
-  /* Prevent "Projects" heading cutoff - increased padding */
   .work-page {
-    padding-top: 180px; /* Increased from 160px to 180px */
+    padding-top: 100px; /* Only if you need overall spacing */
   }
-  
-  .projects-heading {
+
+  .work-title {
+    margin-top: 120px; /* ⬅️ THIS moves "PROJECTS" down into view */
     text-align: center;
     font-size: 2.5rem;
-    margin: 20px 0 1.5rem 0; /* Added top margin for extra spacing */
+    margin-bottom: 1.5rem;
     padding: 0 10px;
     word-wrap: break-word;
   }
-  
-  /* Center and resize project cards */
+
   .card-grid {
     display: flex;
     flex-direction: column;
@@ -262,39 +261,38 @@
     gap: 1.5rem;
     padding: 1rem;
   }
-  
-  .project-box {
+
+  .flip-card {
     width: 90%;
     max-width: 400px;
     margin: 0 auto 20px;
     padding: 20px;
-    box-sizing: border-box;
     border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    box-sizing: border-box;
     background-color: #dbe7ff;
   }
-  
-  .project-title {
-    font-size: 1.25rem;
+
+  .flip-card-front h2 {
+    font-size: 1.2rem;
     text-align: center;
-    margin-bottom: 0.5rem;
-    word-wrap: break-word;
   }
-  
-  .project-tags {
+
+  .flip-card-back {
+    font-size: 0.95rem;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .tech-badges {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 8px;
-    margin-bottom: 10px;
+    margin-top: 0.5rem;
   }
-  
-  .project-description {
-    font-size: 0.95rem;
-    text-align: center;
-    padding: 0 5px;
+
+  .tech-badge {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
   }
 }
