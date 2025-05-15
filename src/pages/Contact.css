@@ -128,69 +128,16 @@
 }
 
 /* Tablet and small desktop */
-@media (max-width: 768px) {
-  .contact-page {
-    overflow-x: hidden;
-  }
-
-  .contact-content {
-    padding: 10px 15px;
-    justify-content: flex-start;
-    margin-top: clamp(50px, 15vh, 110px);
-  }
-
-  .contact-heading {
-    margin-bottom: 5px;
-    top: 0;
-  }
-
-  .contact-title {
-    margin-bottom: clamp(30px, 5vh, 45px);
-    top: 0;
-  }
-
-  .star-wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: visible;
-    transform: translateY(-20px);
-  }
-
-  .social-star {
-    transform: scale(0.7);
-    margin: 0 auto;
-  }
-
-  .contact-page .planet-top-right-contact {
-    top: 15%;
-    right: 5%;
-    transform: scale(0.3);
-  }
-
-  .contact-page .planet-bottom-left-contact {
-    bottom: 8%;
-    left: 5%;
-    transform: scale(0.35);
-  }
-
-  .contact-page .rocket2 {
-    transform: scale(0.3) rotate(40deg) !important;
-  }
-
-  .contact-page::after {
-    content: '';
-    display: block;
-    height: 10vh;
-  }
-}
-
-/* Mobile phones */
 @media (max-width: 480px) {
+  html, body {
+    overflow: hidden; /* ✅ Prevent any scrolling */
+    height: 100vh;
+  }
+
   .contact-page {
-    overflow-x: hidden;
+    overflow: hidden; /* ✅ Prevent internal scroll */
     padding: 0 10px;
+    height: 100vh;
   }
 
   .contact-content {
@@ -215,12 +162,12 @@
     width: 340px;
     height: 340px;
     margin-top: -30px;
-    transform: scale(1); /* more size on mobile */
-    left: 50%;
     transform: translateX(-50%);
     position: relative;
+    left: 50%;
   }
 
+  /* Adjust icon positions for smaller star */
   .icon1 { top: 0px; left: 145px; }
   .icon2 { top: 100px; left: 300px; }
   .icon3 { top: 310px; left: 240px; }
@@ -246,7 +193,7 @@
   .contact-page .planet-bottom-left-contact {
     transform: scale(0.22);
     bottom: 8%;
-    left: 0%;
+    left: -15%; /* ✅ pushed farther left */
   }
 
   .contact-page .rocket2 {
@@ -257,7 +204,6 @@
   }
 
   .contact-page::after {
-    display: none; /* reduce extra scroll space */
+    display: none;
   }
 }
-
