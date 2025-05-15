@@ -427,3 +427,22 @@ html, body {
     }
   }
   
+  @media (max-width: 480px) {
+    html, body {
+      height: auto;
+      overflow-y: auto; /* ✅ enables vertical scroll only on mobile */
+      overflow-x: hidden;
+    }
+  
+    .about-page {
+      height: auto;
+      min-height: 100vh;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+  
+    .about-section {
+      padding-bottom: 60px; /* ✅ add bottom space so last line isn’t cut */
+    }
+  }
+  
