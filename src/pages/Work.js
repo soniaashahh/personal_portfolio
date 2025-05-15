@@ -5,7 +5,7 @@ import './Work.css';
 
 const projects = [
   {
-    title: 'AI for Financial Sustainability (Capstone)',
+    title: 'AI for Financial Sustainability',
     tech: ['Data Science', 'AI', 'Sustainability'],
     description:
       'Investigated topics such as 5G, data science, and cybersecurity. My team and I formulated a solution to the Capstone Project by designing an AI-based solution to increase sustainability in financial services through hologram technology and prototyping an app to track employees.',
